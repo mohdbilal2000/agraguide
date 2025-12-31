@@ -1,0 +1,7 @@
+{
+  "name": "Guide India Tours",
+  "description": "Premium travel platform specializing in Golden Triangle tours with expert local heritage guides and luxury transportation.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
