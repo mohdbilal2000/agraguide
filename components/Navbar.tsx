@@ -1,8 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-// Added ChevronRight to the import list from lucide-react
-import { Menu, X, Phone, Globe, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar: React.FC = () => {
@@ -11,40 +10,44 @@ const Navbar: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 40);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
     setIsMenuOpen(false);
-  }, [location]);
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [location.pathname]);
 
   const navLinks = [
-    { name: 'Tour Plans', path: '/plans' },
-    { name: 'Book a Guide', path: '/guide-booking' },
-    { name: 'Destinations', path: '/destinations' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'About', path: '/about' },
+    { name: 'Plans', path: '/plans' },
+    { name: 'Experts', path: '/guide-booking' },
+    { name: 'Cities', path: '/destinations' },
+    { name: 'Reviews', path: '/reviews' },
   ];
 
   const isHome = location.pathname === '/';
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || !isHome ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'
-      }`}
-    >
-      <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
-        <Link to="/" className="flex flex-col items-start">
-          <span className={`text-2xl font-bold playfair leading-none tracking-tight ${isScrolled || !isHome ? 'text-brand-primary' : 'text-white'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+      isScrolled || !isHome ? 'glass-nav py-3' : 'bg-transparent py-5'
+    }`}>
+      <div className="page-container flex items-center justify-between">
+        <Link to="/" className="group flex flex-col shrink-0">
+          <span className={`text-xl md:text-2xl font-bold playfair transition-colors ${
+            isScrolled || !isHome ? 'text-brand-dark' : 'text-white'
+          }`}>
             Guide India Tours
           </span>
-          <span className={`text-[9px] uppercase tracking-[0.3em] inter font-bold mt-1.5 ${isScrolled || !isHome ? 'text-brand-dark/70' : 'text-white/80'}`}>
-            Heritage Expertise Since 1998
+          <span className={`text-[8px] uppercase tracking-[0.4em] font-bold ${
+            isScrolled || !isHome ? 'text-brand-primary' : 'text-white/60'
+          }`}>
+            Heritage Excellence
           </span>
         </Link>
 
@@ -54,7 +57,7 @@ const Navbar: React.FC = () => {
             <Link
               key={link.name}
               to={link.path}
-              className={`font-bold text-sm uppercase tracking-widest transition-colors hover:text-brand-gold ${
+              className={`text-[10px] font-bold uppercase tracking-widest transition-all hover:text-brand-gold ${
                 isScrolled || !isHome ? 'text-brand-dark' : 'text-white'
               }`}
             >
@@ -63,63 +66,74 @@ const Navbar: React.FC = () => {
           ))}
           <Link 
             to="/booking"
-            className="bg-brand-primary hover:bg-brand-primary/90 text-white px-8 py-3 rounded-full font-bold text-sm uppercase tracking-widest transition-all shadow-lg hover:shadow-brand-primary/30"
+            className="bg-brand-primary text-white px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-brand-dark transition-all shadow-lg"
           >
-            Plan Your Trip
+            Book Experience
           </Link>
         </div>
 
         {/* Mobile Toggle */}
         <button 
-          className="lg:hidden p-2 rounded-xl bg-white/10 backdrop-blur-md" 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle Menu"
+          onClick={() => setIsMenuOpen(true)}
+          className={`lg:hidden p-2 rounded-xl transition-colors ${
+            isScrolled || !isHome ? 'text-brand-dark bg-brand-dark/5' : 'text-white bg-white/10'
+          }`}
         >
-          {isMenuOpen ? (
-            <X className={isScrolled || !isHome ? 'text-brand-dark' : 'text-white'} />
-          ) : (
-            <Menu className={isScrolled || !isHome ? 'text-brand-dark' : 'text-white'} />
-          )}
+          <Menu size={24} />
         </button>
       </div>
 
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ type: 'spring', damping: 25 }}
-            className="fixed inset-0 bg-brand-bg z-[60] lg:hidden flex flex-col p-8"
-          >
-            <div className="flex justify-between items-center mb-16">
-               <span className="text-2xl font-bold playfair text-brand-primary">Guide India Tours</span>
-               <button onClick={() => setIsMenuOpen(false)} className="p-3 bg-brand-dark/5 rounded-full"><X size={24} /></button>
-            </div>
-            <div className="flex flex-col space-y-8 text-2xl font-bold playfair">
-              {navLinks.map((link) => (
-                <Link key={link.name} to={link.path} className="text-brand-dark flex items-center justify-between border-b border-brand-dark/5 pb-4">
-                  {link.name} <ChevronRight size={20} className="text-brand-primary" />
-                </Link>
-              ))}
-              <Link 
-                to="/booking"
-                className="bg-brand-primary text-white py-5 rounded-[2rem] font-bold text-center text-xl shadow-2xl"
-              >
-                Start Planning
-              </Link>
-            </div>
-            <div className="mt-auto pt-10 border-t border-brand-dark/10 grid grid-cols-2 gap-4">
-              <a href="tel:+919876543210" className="flex flex-col items-center gap-2 p-4 bg-white rounded-2xl">
-                <Phone size={20} className="text-brand-primary" />
-                <span className="text-[10px] font-bold uppercase tracking-widest">Call Expert</span>
-              </a>
-              <div className="flex flex-col items-center gap-2 p-4 bg-white rounded-2xl">
-                <Globe size={20} className="text-brand-primary" />
-                <span className="text-[10px] font-bold uppercase tracking-widest">EN | ES | FR</span>
+          <>
+            {/* Backdrop */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMenuOpen(false)}
+              className="fixed inset-0 bg-brand-dark/40 backdrop-blur-sm z-[110]"
+            />
+            
+            {/* Menu Panel */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="fixed inset-y-0 right-0 w-full max-w-sm bg-brand-bg z-[120] p-8 shadow-2xl flex flex-col"
+            >
+              <div className="flex justify-between items-center mb-12">
+                <span className="text-xl font-bold playfair text-brand-primary">Navigation</span>
+                <button onClick={() => setIsMenuOpen(false)} className="p-2 bg-brand-dark/5 rounded-full hover:bg-brand-dark/10 transition-colors">
+                  <X size={20} />
+                </button>
               </div>
-            </div>
-          </motion.div>
+              <div className="space-y-6">
+                {navLinks.map((link) => (
+                  <Link 
+                    key={link.name} 
+                    to={link.path} 
+                    className="flex justify-between items-center text-lg font-bold text-brand-dark border-b border-gray-100 pb-4"
+                  >
+                    {link.name} <ChevronRight size={18} className="text-brand-primary" />
+                  </Link>
+                ))}
+                <Link to="/booking" className="block w-full bg-brand-primary text-white py-4 rounded-2xl text-center font-bold shadow-xl">
+                  Start Planning
+                </Link>
+              </div>
+              <div className="mt-auto p-6 bg-white rounded-3xl border border-gray-100 flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-brand-success/10 flex items-center justify-center text-brand-success">
+                  <Phone size={20} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Help Desk</p>
+                  <p className="font-bold text-brand-dark text-sm">+91 98765 43210</p>
+                </div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>

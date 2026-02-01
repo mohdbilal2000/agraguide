@@ -1,13 +1,17 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guide India Tours | Heritage, Trust, Excellence</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Guide India Tours | Heritage & Luxury Golden Triangle Tours</title>
+    <meta name="description" content="Premium heritage tours in Agra, Delhi, and Jaipur. Book government-approved local experts for Taj Mahal and Golden Triangle experiences." />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Guide India Tours" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -15,55 +19,88 @@
           extend: {
             colors: {
               brand: {
-                primary: '#8B5E3C', // Sandstone Brown
-                dark: '#1F2933',    // Deep Charcoal
-                bg: '#FAF7F2',      // Taj Ivory
-                gold: '#C9A227',    // Heritage Gold
+                primary: '#8B5E3C',
+                dark: '#1A1A1A',
+                bg: '#FAF7F2',
+                gold: '#C9A227',
                 success: '#16A34A',
-                info: '#4338CA',
-                error: '#DC2626'
+                accent: '#E5D5C5',
+                info: '#2563EB'
               }
             },
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
+              sans: ['Plus Jakarta Sans', 'sans-serif'],
               serif: ['Playfair Display', 'serif']
             }
           }
         }
       }
     </script>
-    <style>
-      body {
-        background-color: #FAF7F2;
-        color: #1F2933;
+    <style type="text/css">
+      /* RESET & STABILITY */
+      :root {
+        --brand-bg: #FAF7F2;
+        --brand-dark: #1A1A1A;
+        --brand-primary: #8B5E3C;
       }
-      .playfair { font-family: 'Playfair Display', serif; }
-      .inter { font-family: 'Inter', sans-serif; }
+      * { 
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      body {
+        background-color: var(--brand-bg);
+        color: var(--brand-dark);
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        width: 100%;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        line-height: 1.5;
+      }
+      .playfair { font-family: 'Playfair Display', serif !important; }
+      .jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }
       
-      /* Accessibility: Focus styles */
-      *:focus-visible {
-        outline: 2px solid #8B5E3C;
-        outline-offset: 4px;
+      .page-container {
+        width: 100%;
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      @media (min-width: 768px) {
+        .page-container {
+          padding-left: 2rem;
+          padding-right: 2rem;
+        }
       }
 
-      /* Hide scrollbar but keep functionality for horizontal scrolls */
-      .no-scrollbar::-webkit-scrollbar { display: none; }
-      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      .hero-overlay {
+        background: linear-gradient(to right, rgba(26,26,26,0.9) 0%, rgba(26,26,26,0.4) 50%, transparent 100%);
+      }
+      
+      .glass-nav {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+      }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0"
-  }
-}
-</script>
-</head>
-  <body>
+    <script type="importmap">
+    {
+      "imports": {
+        "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+        "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0"
+      }
+    }
+    </script>
+  </head>
+  <body class="jakarta">
     <div id="root"></div>
   </body>
 </html>

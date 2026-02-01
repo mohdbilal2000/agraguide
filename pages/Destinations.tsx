@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+/* Fix: Import Link from react-router-dom */
 import { Link } from 'react-router-dom';
 import { DESTINATIONS } from '../constants';
 import OptimizedImage from '../components/OptimizedImage';
@@ -37,7 +38,7 @@ const Destinations: React.FC = () => {
                 <h2 className="text-3xl font-bold playfair text-brand-dark mb-4">{dest.name}</h2>
                 <p className="text-gray-500 mb-8 line-clamp-3 leading-relaxed">{dest.description}</p>
                 <Link 
-                  to={`/destinations/${dest.id}`}
+                  to={`/plans`}
                   className="inline-flex items-center gap-2 text-brand-primary font-bold border-b-2 border-brand-primary/20 hover:border-brand-primary pb-1 transition-all"
                 >
                   Explore {dest.name} <ArrowRight size={18} />

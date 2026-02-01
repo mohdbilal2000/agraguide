@@ -1,5 +1,6 @@
 
 import React from 'react';
+/* Fix: Import Link from react-router-dom */
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
 

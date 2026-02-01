@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+/* Fix: Import Link from react-router-dom */
 import { Link } from 'react-router-dom';
 import { BLOG_POSTS } from '../constants';
 import OptimizedImage from '../components/OptimizedImage';
