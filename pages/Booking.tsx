@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, Calendar, Users, MapPin, CreditCard, ArrowRight } from 'lucide-react';
+import OptimizedImage from '../components/OptimizedImage';
 
 const steps = ['Details', 'Dates', 'Payment'];
 
@@ -36,6 +37,19 @@ const Booking: React.FC = () => {
   return (
     <div className="pt-32 pb-20 bg-brand-bg min-h-screen">
       <div className="container mx-auto px-4 max-w-4xl">
+        <div className="text-center mb-12">
+          <div className="inline-block mb-6">
+            <div className="rounded-2xl overflow-hidden shadow-xl h-48 w-full max-w-md mx-auto">
+              <OptimizedImage 
+                src="https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=800&q=80"
+                alt="Taj Mahal"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold playfair text-brand-dark mb-4">Book Your Heritage Journey</h1>
+          <p className="text-gray-500 text-lg">Secure your spot for an unforgettable experience</p>
+        </div>
         <div className="mb-12">
           <div className="flex justify-between items-center mb-4">
             {steps.map((s, i) => (

@@ -34,13 +34,29 @@ const About: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             className="relative"
           >
-            <div className="rounded-[3rem] overflow-hidden shadow-2xl h-[600px]">
+            <div className="rounded-[3rem] overflow-hidden shadow-2xl h-[600px] relative">
               <OptimizedImage src="https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=1000&q=80" alt="Guide Team in front of Taj Mahal" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent" />
             </div>
-            <div className="absolute -bottom-10 -left-10 bg-white p-8 rounded-[2rem] shadow-2xl max-w-xs border border-brand-dark/5">
+            <div className="absolute -bottom-10 -left-10 bg-white p-8 rounded-[2rem] shadow-2xl max-w-xs border border-brand-dark/5 z-10">
               <Award className="text-brand-gold mb-4" size={32} />
               <h4 className="font-bold text-brand-dark mb-2">UNESCO Specialists</h4>
               <p className="text-sm text-gray-500">Our guides undergo rigorous training in Indian architecture and heritage history.</p>
+            </div>
+            <div className="absolute top-10 right-10 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-brand-dark/5 z-10">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-brand-primary/20">
+                  <OptimizedImage 
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
+                    alt="Expert Guide"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-bold text-brand-dark text-sm">Expert Guides</p>
+                  <p className="text-xs text-gray-500">Licensed Professionals</p>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

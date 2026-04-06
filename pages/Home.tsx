@@ -16,17 +16,33 @@ const Home: React.FC = () => {
       <Hero />
 
       {/* Trust Badges */}
-      <section className="bg-brand-dark py-12">
-        <div className="container mx-auto px-4">
+      <section className="bg-brand-dark py-16 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <OptimizedImage 
+            src="https://images.unsplash.com/photo-1564507592333-c60657451dc6?auto=format&fit=crop&w=2000&q=80"
+            alt="Background pattern"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { icon: Shield, label: 'Government Approved' },
-              { icon: MapPin, label: 'Verified Experts' },
-              { icon: Award, label: 'Premium Quality' },
-              { icon: Users, label: 'Private Groups' }
+              { icon: Shield, label: 'Government Approved', image: 'https://images.unsplash.com/photo-1587474260584-1f35a4088f1c?auto=format&fit=crop&w=200&q=80' },
+              { icon: MapPin, label: 'Verified Experts', image: 'https://images.unsplash.com/photo-1599661046289-e3189785002a?auto=format&fit=crop&w=200&q=80' },
+              { icon: Award, label: 'Premium Quality', image: 'https://images.unsplash.com/photo-1564507592333-c60657451dc6?auto=format&fit=crop&w=200&q=80' },
+              { icon: Users, label: 'Private Groups', image: 'https://images.unsplash.com/photo-1524492707947-2f85a64b6bb1?auto=format&fit=crop&w=200&q=80' }
             ].map((badge, i) => (
-              <div key={i} className="flex flex-col items-center text-center gap-3">
-                <badge.icon className="text-brand-gold" size={32} strokeWidth={1.5} />
+              <div key={i} className="flex flex-col items-center text-center gap-4 group">
+                <div className="relative w-20 h-20 rounded-2xl overflow-hidden border-2 border-brand-gold/30 group-hover:border-brand-gold transition-all">
+                  <OptimizedImage 
+                    src={badge.image}
+                    alt={badge.label}
+                    className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <badge.icon className="text-brand-gold" size={32} strokeWidth={1.5} />
+                  </div>
+                </div>
                 <span className="text-white font-medium text-xs tracking-widest uppercase">{badge.label}</span>
               </div>
             ))}
@@ -35,18 +51,49 @@ const Home: React.FC = () => {
       </section>
 
       {/* Intro Section */}
-      <section className="py-24 bg-brand-bg">
-        <div className="container mx-auto px-4 md:px-8 text-center max-w-4xl">
-          <span className="text-brand-primary font-bold tracking-[0.2em] text-xs uppercase mb-6 block">Welcome to Heritage</span>
-          <h2 className="text-4xl md:text-6xl font-bold playfair text-brand-dark mb-8 leading-tight">
-            Discover India Through Local Expert Eyes
-          </h2>
-          <p className="text-xl text-gray-600 inter leading-relaxed mb-12">
-            Since 1998, Guide India Tours has been the premier choice for travelers seeking more than just a tour. We offer deep cultural dives, historical revelations, and seamless luxury logistics in Agra, Delhi, and Jaipur.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/plans" className="bg-brand-primary text-white px-10 py-4 rounded-xl font-bold shadow-xl shadow-brand-primary/20 hover:bg-brand-primary/90 transition-all">Explore Plans</Link>
-            <Link to="/about" className="bg-white border-2 border-brand-primary/10 text-brand-primary px-10 py-4 rounded-xl font-bold hover:bg-brand-primary/5 transition-all">Our Story</Link>
+      <section className="py-24 bg-brand-bg relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <OptimizedImage 
+            src="https://images.unsplash.com/photo-1564507592333-c60657451dc6?auto=format&fit=crop&w=2000&q=80"
+            alt="Taj Mahal background"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container mx-auto px-4 md:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
+              <span className="text-brand-primary font-bold tracking-[0.2em] text-xs uppercase mb-6 block">Welcome to Heritage</span>
+              <h2 className="text-4xl md:text-6xl font-bold playfair text-brand-dark mb-8 leading-tight">
+                Discover India Through Local Expert Eyes
+              </h2>
+              <p className="text-xl text-gray-600 inter leading-relaxed mb-12">
+                Since 1998, Guide India Tours has been the premier choice for travelers seeking more than just a tour. We offer deep cultural dives, historical revelations, and seamless luxury logistics in Agra, Delhi, and Jaipur.
+              </p>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+                <Link to="/plans" className="bg-brand-primary text-white px-10 py-4 rounded-xl font-bold shadow-xl shadow-brand-primary/20 hover:bg-brand-primary/90 transition-all">Explore Plans</Link>
+                <Link to="/about" className="bg-white border-2 border-brand-primary/10 text-brand-primary px-10 py-4 rounded-xl font-bold hover:bg-brand-primary/5 transition-all">Our Story</Link>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="rounded-[3rem] overflow-hidden shadow-2xl">
+                <OptimizedImage 
+                  src="https://images.unsplash.com/photo-1599661046289-e3189785002a?auto=format&fit=crop&w=800&q=80"
+                  alt="Amber Fort Jaipur"
+                  className="w-full h-[500px] object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-brand-dark/5 hidden lg:block">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-xl bg-brand-primary/10 flex items-center justify-center">
+                    <span className="text-2xl font-bold text-brand-primary">25+</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-brand-dark uppercase tracking-widest">Years of Excellence</p>
+                    <p className="text-xs text-gray-500">Since 1998</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

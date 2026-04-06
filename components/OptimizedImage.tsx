@@ -24,6 +24,22 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     }
   }, [priority]);
 
+  // Handle image load
+  const handleLoad = () => {
+    setLoaded(true);
+  };
+
+  // Handle image error with fallback
+  const handleError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    setError(true);
+    const target = e.currentTarget;
+    // Try to load a placeholder if the original fails
+    if (target && !target.src.includes('placeholder') && !target.src.includes('data:')) {
+      target.src = `https://via.placeholder.com/800x600/8B5E3C/FFFFFF?text=${encodeURIComponent(alt)}`;
+      setError(false);
+    }
+  };
+
   return (
     <div className={`relative overflow-hidden bg-brand-dark/10 ${className}`}>
       {!loaded && !error && (
@@ -34,11 +50,12 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         src={src}
         alt={alt}
         loading={priority ? "eager" : "lazy"}
-        className={`w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
-          loaded ? 'opacity-100' : 'opacity-0'
+        className={`w-full h-full object-cover transition-opacity duration-500 ease-in-out ${
+          loaded ? 'opacity-100' : 'opacity-90'
         }`}
-        onLoad={() => setLoaded(true)}
-        onError={() => setError(true)}
+        onLoad={handleLoad}
+        onError={handleError}
+        style={{ display: 'block', minHeight: '100px' }}
       />
       {error && (
         <div className="absolute inset-0 flex items-center justify-center bg-gray-100 text-gray-400">

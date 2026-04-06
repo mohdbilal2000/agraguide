@@ -1,7 +1,7 @@
 
 import React, { useEffect, Suspense } from 'react';
 import { 
-  MemoryRouter as Router, 
+  BrowserRouter as Router, 
   Routes, 
   Route, 
   useLocation 

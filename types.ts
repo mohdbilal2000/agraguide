@@ -5,6 +5,8 @@ export interface Tour {
   description: string;
   duration: string;
   price: number;
+  originalPrice?: number;
+  discount?: string;
   image: string;
   category: string;
   rating: number;

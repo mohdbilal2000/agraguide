@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const Plans: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
-  const categories = ['All', 'Full Day', 'Same Day Delhi', 'Multi-Day', 'Cultural'];
+  const categories = ['All', 'Same Day Tours', 'Two Day Tours', 'Golden Triangle', 'Royal Rajasthan', 'Photography Tours'];
 
   const filteredTours = useMemo(() => {
     return TOURS.filter(tour => {

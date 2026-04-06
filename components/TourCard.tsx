@@ -13,13 +13,23 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
   return (
     <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-brand-dark/5 flex flex-col h-full">
       <div className="relative h-64 overflow-hidden">
-        {tour.isMostBooked && (
-          <div className="absolute top-4 left-4 z-10 bg-brand-gold text-brand-dark text-[10px] font-bold uppercase tracking-widest py-1 px-3 rounded-full flex items-center gap-1 shadow-lg">
-            <Star size={10} fill="currentColor" /> Most Booked
-          </div>
-        )}
-        <div className="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-brand-primary font-bold text-sm shadow-md">
-          ${tour.price}
+        <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
+          {tour.discount && (
+            <span className="bg-red-500 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-3 rounded-full shadow-lg">
+              {tour.discount}
+            </span>
+          )}
+          {tour.isMostBooked && (
+            <span className="bg-brand-gold text-brand-dark text-[10px] font-bold uppercase tracking-widest py-1 px-3 rounded-full flex items-center gap-1 shadow-lg">
+              <Star size={10} fill="currentColor" /> Most Booked
+            </span>
+          )}
+        </div>
+        <div className="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-md text-right">
+          {tour.originalPrice && (
+            <span className="text-gray-400 text-xs line-through block">${tour.originalPrice}</span>
+          )}
+          <span className="text-brand-primary font-bold text-sm">${tour.price}<span className="text-gray-400 text-xs font-normal">/ person</span></span>
         </div>
         <OptimizedImage 
           src={tour.image} 
@@ -57,7 +67,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
 
         <div className="flex gap-2">
           <Link 
-            to={`/tours/${tour.id}`}
+            to={`/plans/${tour.id}`}
             className="flex-1 bg-white border border-brand-primary/20 hover:border-brand-primary text-brand-primary py-3 rounded-xl font-bold text-sm text-center transition-all flex items-center justify-center gap-2"
           >
             Details

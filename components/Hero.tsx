@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import OptimizedImage from './OptimizedImage';
 
 const slides = [
   {
@@ -44,10 +45,11 @@ const Hero: React.FC = () => {
           className="absolute inset-0"
         >
           <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/40 via-transparent to-brand-dark/70 z-10" />
-          <img 
+          <OptimizedImage 
             src={slides[current].image} 
             alt={slides[current].title}
             className="w-full h-full object-cover"
+            priority={current === 0}
           />
         </motion.div>
       </AnimatePresence>

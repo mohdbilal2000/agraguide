@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 // Fixed: Added Crown and Check to the lucide-react imports
 import { MapPin, Clock, Languages, Shield, CheckCircle, MessageSquare, ArrowRight, ArrowLeft, Crown, Check } from 'lucide-react';
 import { GUIDE_PACKAGES } from '../constants';
+import OptimizedImage from '../components/OptimizedImage';
 
 const GuideBooking: React.FC = () => {
   const [step, setStep] = useState(1);
@@ -53,6 +54,15 @@ Language: ${selection.language}`;
     <div className="pt-32 pb-24 bg-brand-bg min-h-screen">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-16">
+          <div className="inline-block mb-6">
+            <div className="rounded-2xl overflow-hidden shadow-xl h-48 w-full max-w-md mx-auto">
+              <OptimizedImage 
+                src="https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=800&q=80"
+                alt="Heritage Guide"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
           <span className="text-brand-primary font-bold tracking-[0.3em] text-xs uppercase mb-3 block">Expert Concierge</span>
           <h1 className="text-5xl font-bold playfair text-brand-dark mb-4">Book Your Heritage Expert</h1>
           <p className="text-gray-500 inter max-w-xl mx-auto">Customize your local discovery in four simple steps.</p>
@@ -95,7 +105,7 @@ Language: ${selection.language}`;
                         className="group flex flex-col items-center gap-4 transition-all"
                       >
                         <div className="w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-lg group-hover:shadow-2xl transition-all relative">
-                          <img src={city.img} alt={city.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                          <OptimizedImage src={city.img} alt={city.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                           <div className="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition-colors" />
                         </div>
                         <span className="font-bold text-xl playfair">{city.name}</span>
