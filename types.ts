@@ -4,7 +4,7 @@ export interface Tour {
   title: string;
   description: string;
   duration: string;
-  price: number;
+  price: number | 'Custom Quote';
   originalPrice?: number;
   discount?: string;
   image: string;
@@ -14,6 +14,8 @@ export interface Tour {
   highlights: string[];
   itinerary?: { time: string; activity: string }[];
   isMostBooked?: boolean;
+  pickup?: 'Available' | 'N/A';
+  tags?: string[];
 }
 
 export interface GuidePackage {

@@ -1,5 +1,6 @@
 
 import React from 'react';
+/* Fix: Import useParams and Link from react-router-dom */
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
@@ -40,7 +41,7 @@ const TourDetail: React.FC = () => {
         <div className="container mx-auto px-4 md:px-8 flex items-center gap-2 text-sm text-gray-500">
           <Link to="/" className="hover:text-brand-primary">Home</Link>
           <ChevronRight size={14} />
-          <Link to="/tours" className="hover:text-brand-primary">Tours</Link>
+          <Link to="/plans" className="hover:text-brand-primary">Tours</Link>
           <ChevronRight size={14} />
           <span className="text-brand-dark font-medium">{tour.title}</span>
         </div>

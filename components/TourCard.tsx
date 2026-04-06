@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Star, Clock, Check, ArrowRight } from 'lucide-react';
+import { Star, Clock, Check, ArrowRight, Tag } from 'lucide-react';
 import { Tour } from '../types';
 import OptimizedImage from './OptimizedImage';
 
@@ -11,7 +11,7 @@ interface TourCardProps {
 
 const TourCard: React.FC<TourCardProps> = ({ tour }) => {
   return (
-    <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-brand-dark/5 flex flex-col h-full">
+    <div className="group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-brand-dark/5 flex flex-col h-full">
       <div className="relative h-64 overflow-hidden">
         <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
           {tour.discount && (
@@ -25,61 +25,56 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
             </span>
           )}
         </div>
-        <div className="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-md text-right">
-          {tour.originalPrice && (
-            <span className="text-gray-400 text-xs line-through block">${tour.originalPrice}</span>
-          )}
-          <span className="text-brand-primary font-bold text-sm">${tour.price}<span className="text-gray-400 text-xs font-normal">/ person</span></span>
+        <div className="absolute top-4 right-4 z-10 bg-brand-primary text-white text-[10px] font-bold uppercase tracking-widest py-1 px-3 rounded-full shadow-lg">
+          {tour.category}
         </div>
-        <OptimizedImage 
-          src={tour.image} 
+        <OptimizedImage
+          src={tour.image}
           alt={tour.title}
-          className="group-hover:scale-110 transition-transform duration-700" 
+          className="group-hover:scale-110 transition-transform duration-700 h-full w-full"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
 
-      <div className="p-6 flex flex-col flex-grow">
-        <div className="flex items-center gap-2 mb-3">
+      <div className="p-8 flex flex-col flex-grow">
+        <div className="flex items-center justify-between mb-4">
           <div className="flex text-brand-gold">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} size={14} fill={i < Math.floor(tour.rating) ? "currentColor" : "none"} />
+              <Star key={i} size={14} fill={i < Math.floor(typeof tour.rating === 'number' ? tour.rating : 0) ? "currentColor" : "none"} />
             ))}
+            <span className="text-[10px] text-gray-400 font-bold ml-2">({tour.reviewsCount})</span>
           </div>
-          <span className="text-xs text-gray-400">({tour.reviewsCount} Reviews)</span>
+          <div className="text-right">
+            {tour.originalPrice && (
+              <span className="text-gray-400 text-xs line-through block">${tour.originalPrice}</span>
+            )}
+            <span className="text-brand-primary font-bold playfair text-xl">
+              {typeof tour.price === 'number' ? `$${tour.price}` : tour.price}
+            </span>
+          </div>
         </div>
 
-        <h3 className="text-xl font-bold playfair mb-2 text-brand-dark group-hover:text-brand-primary transition-colors">
-          {tour.title}
+        <h3 className="text-2xl font-bold playfair mb-3 text-brand-dark group-hover:text-brand-primary transition-colors leading-tight">
+          <Link to={`/plans/${tour.id}`}>{tour.title}</Link>
         </h3>
 
-        <div className="flex items-center gap-2 text-gray-500 text-sm mb-4">
-          <Clock size={14} /> {tour.duration}
+        <div className="flex items-center gap-4 text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-6 pb-6 border-b border-brand-dark/5">
+          <span className="flex items-center gap-1.5"><Clock size={12} className="text-brand-primary" /> {tour.duration}</span>
+          <span className="flex items-center gap-1.5"><Tag size={12} className="text-brand-primary" /> Private Tour</span>
         </div>
 
-        <ul className="space-y-2 mb-6 flex-grow">
-          {tour.highlights.slice(0, 3).map((h, i) => (
-            <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-              <Check size={14} className="text-brand-success mt-0.5 shrink-0" />
-              <span>{h}</span>
-            </li>
-          ))}
-        </ul>
-
-        <div className="flex gap-2">
-          <Link 
+        <div className="flex gap-3 mt-auto">
+          <Link
             to={`/plans/${tour.id}`}
-            className="flex-1 bg-white border border-brand-primary/20 hover:border-brand-primary text-brand-primary py-3 rounded-xl font-bold text-sm text-center transition-all flex items-center justify-center gap-2"
+            className="flex-1 bg-brand-primary text-white py-4 rounded-xl font-bold text-xs uppercase tracking-widest text-center transition-all hover:bg-brand-dark shadow-lg shadow-brand-primary/10"
           >
             Details
-            <ArrowRight size={14} />
           </Link>
-          <a 
-            href={`https://wa.me/919876543210?text=Hi, I want to book the ${tour.title}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 bg-brand-primary hover:bg-brand-primary/90 text-white py-3 rounded-xl font-bold text-sm text-center transition-all"
+          <a
+            href={`https://wa.me/919876543210?text=I'm interested in: ${tour.title}`}
+            className="p-4 bg-brand-success/10 text-brand-success rounded-xl hover:bg-brand-success hover:text-white transition-all"
           >
-            Book Now
+            <Check size={18} />
           </a>
         </div>
       </div>
