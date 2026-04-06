@@ -35,7 +35,7 @@ const PlanDetail: React.FC = () => {
     "description": tour.description,
     "brand": {
       "@type": "Brand",
-      "name": "Guide India Tours"
+      "name": "Indiventure Travellers"
     },
     "offers": {
       "@type": "Offer",
@@ -69,7 +69,7 @@ const PlanDetail: React.FC = () => {
           <Link to="/plans" className="p-2 md:p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all">
             <ArrowLeft size={20} className="md:w-6 md:h-6" />
           </Link>
-          <span className="playfair text-sm md:text-xl font-bold text-white tracking-widest uppercase">Guide India Tours</span>
+          <span className="playfair text-sm md:text-xl font-bold text-white tracking-widest uppercase">Indiventure Travellers</span>
           <Link to="/contact" className="p-2 md:p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all">
             <MessageCircle size={20} className="md:w-6 md:h-6" />
           </Link>

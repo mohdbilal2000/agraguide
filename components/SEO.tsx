@@ -20,7 +20,7 @@ const SEO: React.FC<SEOProps> = ({
 }) => {
   useEffect(() => {
     // Update Document Title
-    document.title = `${title} | Guide India Tours`;
+    document.title = `${title} | Indiventure Travellers`;
     
     // Update Meta Description
     let metaDesc = document.querySelector('meta[name="description"]');

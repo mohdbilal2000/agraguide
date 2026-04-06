@@ -20,9 +20,9 @@ const Home: React.FC = () => {
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "TravelAgency",
-    "name": "Guide India Tours",
+    "name": "Indiventure Travellers",
     "description": "Premium heritage tour agency specializing in the Golden Triangle and Agra regions.",
-    "url": "https://agratourguides.com",
+    "url": "https://indiventuretravellers.com",
     "telephone": "+919876543210",
     "priceRange": "$$",
     "address": {

@@ -96,7 +96,7 @@ const ContactButton: React.FC = () => {
                 </div>
               </a>
               <a 
-                href="mailto:contact@agratourguides.com" 
+                href="mailto:contact@indiventuretravellers.com" 
                 className="flex items-center gap-4 p-4 rounded-xl bg-brand-dark/5 hover:bg-brand-dark/10 text-brand-dark transition-all border border-brand-dark/10"
               >
                 <Mail fill="currentColor" className="text-brand-dark" />

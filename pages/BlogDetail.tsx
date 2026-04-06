@@ -23,10 +23,10 @@ const BlogDetail: React.FC = () => {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Guide India Tours",
+      "name": "Indiventure Travellers",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://agratourguides.com/logo.png"
+        "url": "https://indiventuretravellers.com/logo.png"
       }
     },
     "datePublished": post.date,

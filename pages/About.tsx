@@ -17,7 +17,7 @@ const About: React.FC = () => {
             <span className="text-brand-primary font-bold tracking-widest text-xs uppercase block">Our Legacy</span>
             <h1 className="text-5xl md:text-7xl font-bold playfair text-brand-dark leading-tight">Authentic Heritage Since 1998</h1>
             <p className="text-xl text-gray-600 leading-relaxed font-light italic">"We don't just show you the Taj Mahal; we reveal the stories etched in its marble."</p>
-            <p className="text-lg text-gray-500 leading-relaxed inter">Guide India Tours began as a small collective of history enthusiasts in Agra. Today, we have grown into a premier network of government-licensed guides covering the entire Golden Triangle.</p>
+            <p className="text-lg text-gray-500 leading-relaxed inter">Indiventure Travellers began as a small collective of history enthusiasts in Agra. Today, we have grown into a premier network of government-licensed guides covering the entire Golden Triangle.</p>
             <div className="grid grid-cols-2 gap-8 pt-8">
               <div>
                 <h4 className="text-4xl font-bold playfair text-brand-primary">25+</h4>

@@ -20,8 +20,8 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
           <div className="space-y-8">
             <Link to="/" className="flex flex-col">
-              <span className="text-3xl font-bold playfair text-brand-gold">Guide India Tours</span>
-              <span className="text-[10px] uppercase tracking-[0.3em] text-white/40 mt-1">Heritage Excellence Since 1998</span>
+              <span className="text-3xl font-bold playfair text-brand-gold">Indiventure Travellers</span>
+              <span className="text-[10px] uppercase tracking-[0.3em] text-white/40 mt-1">Adventure Awaits</span>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed">
               India's premier heritage collective. We specialize in providing authentic local perspectives across the Golden Triangle and beyond.
@@ -68,14 +68,14 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex gap-4 items-center">
                 <Mail className="text-brand-gold shrink-0" size={18} />
-                <a href="mailto:hello@guideindiatours.com" className="hover:text-brand-gold transition-colors">hello@guideindiatours.com</a>
+                <a href="mailto:hello@indiventuretravellers.com" className="hover:text-brand-gold transition-colors">hello@indiventuretravellers.com</a>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-white/30 text-[10px] font-bold uppercase tracking-widest">
-          <p>© 2024 Guide India Tours. Crafted with Heritage Pride.</p>
+          <p>© 2024 Indiventure Travellers. Crafted with Heritage Pride.</p>
           <div className="flex gap-10">
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>

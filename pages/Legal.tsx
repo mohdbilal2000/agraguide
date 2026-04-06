@@ -20,7 +20,7 @@ const Legal: React.FC<{ title: string }> = ({ title }) => {
             
             <section>
               <h2 className="text-2xl font-bold playfair text-brand-dark mb-4">2. Payment Security</h2>
-              <p>All financial transactions are processed through secure, encrypted gateways. Guide India Tours does not store full credit card details on its servers.</p>
+              <p>All financial transactions are processed through secure, encrypted gateways. Indiventure Travellers does not store full credit card details on its servers.</p>
             </section>
 
             <section>
@@ -30,12 +30,12 @@ const Legal: React.FC<{ title: string }> = ({ title }) => {
 
             <section>
               <h2 className="text-2xl font-bold playfair text-brand-dark mb-4">4. Liability Statement</h2>
-              <p>While we ensure the highest standards of safety and vetting for all our partners, Guide India Tours is not liable for personal injury or property loss during tours. We strongly recommend all guests possess comprehensive travel insurance.</p>
+              <p>While we ensure the highest standards of safety and vetting for all our partners, Indiventure Travellers is not liable for personal injury or property loss during tours. We strongly recommend all guests possess comprehensive travel insurance.</p>
             </section>
           </div>
           
           <div className="mt-16 pt-10 border-t border-brand-dark/5 text-sm text-gray-400">
-            Last updated: October 2024. For further inquiries, contact legal@guideindiatours.com.
+            Last updated: October 2024. For further inquiries, contact legal@indiventuretravellers.com.
           </div>
         </div>
       </div>

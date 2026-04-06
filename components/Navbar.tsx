@@ -42,12 +42,12 @@ const Navbar: React.FC = () => {
           <span className={`text-xl md:text-2xl font-bold playfair transition-colors ${
             isScrolled || !isHome ? 'text-brand-dark' : 'text-white'
           }`}>
-            Guide India Tours
+            Indiventure Travellers
           </span>
           <span className={`text-[8px] uppercase tracking-[0.4em] font-bold ${
             isScrolled || !isHome ? 'text-brand-primary' : 'text-white/60'
           }`}>
-            Heritage Excellence
+            Adventure Awaits
           </span>
         </Link>
 
