@@ -24,7 +24,7 @@ const ContactButton: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 z-[100] flex flex-col items-end">
+    <div className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[100] flex flex-col items-end" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
       {/* Auto Prompt */}
       <AnimatePresence>
         {showPrompt && !isOpen && (
@@ -34,11 +34,12 @@ const ContactButton: React.FC = () => {
             exit={{ opacity: 0, scale: 0.9 }}
             className="bg-white p-4 rounded-2xl shadow-2xl border border-brand-primary/10 mb-4 max-w-[280px] relative"
           >
-            <button 
+            <button
               onClick={dismissPrompt}
+              aria-label="Dismiss"
               className="absolute -top-2 -right-2 bg-gray-100 hover:bg-gray-200 rounded-full p-1 text-gray-500"
             >
-              <X size={14} />
+              <X size={14} aria-hidden="true" />
             </button>
             <div className="flex gap-3 items-center mb-2">
               <div className="w-10 h-10 rounded-full bg-brand-success/10 flex items-center justify-center text-brand-success">
@@ -115,11 +116,13 @@ const ContactButton: React.FC = () => {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? 'Close contact options' : 'Open contact options'}
+        aria-expanded={isOpen}
         className={`w-16 h-16 rounded-full flex items-center justify-center shadow-2xl transition-all ${
           isOpen ? 'bg-brand-dark text-white rotate-90' : 'bg-brand-success text-white'
         }`}
       >
-        {isOpen ? <X size={28} /> : <MessageCircle size={28} />}
+        {isOpen ? <X size={28} aria-hidden="true" /> : <MessageCircle size={28} aria-hidden="true" />}
       </motion.button>
     </div>
   );

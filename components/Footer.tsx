@@ -27,9 +27,9 @@ const Footer: React.FC = () => {
               India's premier heritage collective. We specialize in providing authentic local perspectives across the Golden Triangle and beyond.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="p-3 bg-white/5 hover:bg-brand-primary hover:text-white rounded-full transition-all border border-white/10"><Instagram size={18} /></a>
-              <a href="#" className="p-3 bg-white/5 hover:bg-brand-primary hover:text-white rounded-full transition-all border border-white/10"><Facebook size={18} /></a>
-              <a href="#" className="p-3 bg-white/5 hover:bg-brand-primary hover:text-white rounded-full transition-all border border-white/10"><Twitter size={18} /></a>
+              <a href="#" aria-label="Instagram" className="p-3 bg-white/5 hover:bg-brand-primary hover:text-white rounded-full transition-all border border-white/10"><Instagram size={18} aria-hidden="true" /></a>
+              <a href="#" aria-label="Facebook" className="p-3 bg-white/5 hover:bg-brand-primary hover:text-white rounded-full transition-all border border-white/10"><Facebook size={18} aria-hidden="true" /></a>
+              <a href="#" aria-label="Twitter / X" className="p-3 bg-white/5 hover:bg-brand-primary hover:text-white rounded-full transition-all border border-white/10"><Twitter size={18} aria-hidden="true" /></a>
             </div>
           </div>
 
@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-white/30 text-[10px] font-bold uppercase tracking-widest">
-          <p>© 2024 Indiventure Travellers. Crafted with Heritage Pride.</p>
+          <p>© {new Date().getFullYear()} Indiventure Travellers. Crafted with Heritage Pride.</p>
           <div className="flex gap-10">
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>

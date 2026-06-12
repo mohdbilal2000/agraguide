@@ -1,53 +1,81 @@
-
 import React, { useEffect } from 'react';
+
+export const SITE_URL = 'https://indiventuretravellers.com';
+export const SITE_NAME = 'Indiventure Travellers';
 
 interface SEOProps {
   title: string;
   description: string;
-  schema?: object;
+  /** One or more JSON-LD schema objects for this page */
+  schema?: object | object[];
+  /** Path ("/plans") or absolute URL. Defaults to the current path. */
   canonical?: string;
   type?: 'website' | 'article' | 'product';
   image?: string;
 }
 
-const SEO: React.FC<SEOProps> = ({ 
-  title, 
-  description, 
-  schema, 
-  canonical, 
+const upsertMeta = (attr: 'name' | 'property', key: string, content: string) => {
+  let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute(attr, key);
+    document.head.appendChild(el);
+  }
+  el.setAttribute('content', content);
+};
+
+const upsertLink = (rel: string, href: string) => {
+  let el = document.head.querySelector<HTMLLinkElement>(`link[rel="${rel}"]`);
+  if (!el) {
+    el = document.createElement('link');
+    el.setAttribute('rel', rel);
+    document.head.appendChild(el);
+  }
+  el.setAttribute('href', href);
+};
+
+const SEO: React.FC<SEOProps> = ({
+  title,
+  description,
+  schema,
+  canonical,
   type = 'website',
   image = 'https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=1200&q=80'
 }) => {
   useEffect(() => {
-    // Update Document Title
-    document.title = `${title} | Indiventure Travellers`;
-    
-    // Update Meta Description
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute('content', description);
-    }
+    const fullTitle = `${title} | ${SITE_NAME}`;
+    const url = canonical
+      ? canonical.startsWith('http') ? canonical : `${SITE_URL}${canonical}`
+      : `${SITE_URL}${window.location.pathname}`;
 
-    // Handle JSON-LD Schema
-    const existingScript = document.getElementById('json-ld-schema');
-    if (existingScript) existingScript.remove();
+    document.title = fullTitle;
+    upsertMeta('name', 'description', description);
+    upsertLink('canonical', url);
 
+    upsertMeta('property', 'og:title', fullTitle);
+    upsertMeta('property', 'og:description', description);
+    upsertMeta('property', 'og:url', url);
+    upsertMeta('property', 'og:image', image);
+    upsertMeta('property', 'og:type', type === 'product' ? 'website' : type);
+
+    upsertMeta('name', 'twitter:card', 'summary_large_image');
+    upsertMeta('name', 'twitter:title', fullTitle);
+    upsertMeta('name', 'twitter:description', description);
+    upsertMeta('name', 'twitter:image', image);
+
+    // Page-level JSON-LD (organization schema stays static in index.html)
+    document.querySelectorAll('script[data-seo-jsonld]').forEach(el => el.remove());
     if (schema) {
-      const script = document.createElement('script');
-      script.id = 'json-ld-schema';
-      script.type = 'application/json+ld';
-      script.text = JSON.stringify(schema);
-      document.head.appendChild(script);
+      const blocks = Array.isArray(schema) ? schema : [schema];
+      blocks.forEach(block => {
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.setAttribute('data-seo-jsonld', 'true');
+        script.text = JSON.stringify(block);
+        document.head.appendChild(script);
+      });
     }
-    
-    // OG Tags
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute('content', title);
-    
-    const ogImage = document.querySelector('meta[property="og:image"]');
-    if (ogImage) ogImage.setAttribute('content', image);
-
-  }, [title, description, schema, image]);
+  }, [title, description, schema, canonical, type, image]);
 
   return null;
 };

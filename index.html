@@ -1,95 +1,79 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Indiventure Travellers | Heritage & Luxury Golden Triangle Tours</title>
-    <meta name="description" content="Premium heritage tours in Agra, Delhi, and Jaipur. Book government-approved local experts for Taj Mahal and Golden Triangle experiences." />
-    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Taj Mahal & Golden Triangle Tours with Local Experts | Indiventure Travellers</title>
+    <meta name="description" content="Private Taj Mahal, Agra, Delhi & Jaipur tours from $40 with government-licensed local guides. Sunrise tours, same-day trips from Delhi, and luxury Golden Triangle packages since 1998." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="theme-color" content="#8B5E3C" />
+    <link rel="canonical" href="https://indiventuretravellers.com/" />
+
+    <!-- Local relevance -->
+    <meta name="geo.region" content="IN-UP" />
+    <meta name="geo.placename" content="Agra, Uttar Pradesh, India" />
+    <meta name="geo.position" content="27.1635;78.0413" />
+    <meta name="ICBM" content="27.1635, 78.0413" />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Indiventure Travellers" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                primary: '#8B5E3C',
-                dark: '#1A1A1A',
-                bg: '#FAF7F2',
-                gold: '#C9A227',
-                success: '#16A34A',
-                accent: '#E5D5C5',
-                info: '#2563EB'
-              }
-            },
-            fontFamily: {
-              sans: ['Plus Jakarta Sans', 'sans-serif'],
-              serif: ['Playfair Display', 'serif']
-            }
-          }
-        }
-      }
-    </script>
-    <style type="text/css">
-      /* RESET & STABILITY */
-      :root {
-        --brand-bg: #FAF7F2;
-        --brand-dark: #1A1A1A;
-        --brand-primary: #8B5E3C;
-      }
-      * { 
-        box-sizing: border-box;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-      body {
-        background-color: var(--brand-bg);
-        color: var(--brand-dark);
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-        width: 100%;
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        line-height: 1.5;
-      }
-      .playfair { font-family: 'Playfair Display', serif !important; }
-      .jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }
-      
-      .page-container {
-        width: 100%;
-        max-width: 1280px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-      @media (min-width: 768px) {
-        .page-container {
-          padding-left: 2rem;
-          padding-right: 2rem;
-        }
-      }
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://indiventuretravellers.com/" />
+    <meta property="og:title" content="Taj Mahal & Golden Triangle Tours with Local Experts | Indiventure Travellers" />
+    <meta property="og:description" content="Private Taj Mahal, Agra, Delhi & Jaipur tours from $40 with government-licensed local guides. Sunrise tours, same-day trips and luxury Golden Triangle packages." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=1200&q=80" />
 
-      .hero-overlay {
-        background: linear-gradient(to right, rgba(26,26,26,0.9) 0%, rgba(26,26,26,0.4) 50%, transparent 100%);
-      }
-      
-      .glass-nav {
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(0,0,0,0.05);
-      }
-    </style>
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Taj Mahal & Golden Triangle Tours with Local Experts | Indiventure Travellers" />
+    <meta name="twitter:description" content="Private Taj Mahal, Agra, Delhi & Jaipur tours from $40 with government-licensed local guides." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=1200&q=80" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
+
+    <!-- LCP hero image -->
+    <link rel="preload" as="image" fetchpriority="high" href="https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=1600&q=75" />
+
+    <!-- Organization entity (static — readable without JS by search & AI crawlers) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "@id": "https://indiventuretravellers.com/#organization",
+      "name": "Indiventure Travellers",
+      "url": "https://indiventuretravellers.com",
+      "description": "Private heritage tour agency specializing in Taj Mahal, Agra and Golden Triangle tours with government-licensed local guides since 1998.",
+      "telephone": "+919876543210",
+      "email": "hello@indiventuretravellers.com",
+      "priceRange": "$40 - $500",
+      "currenciesAccepted": "USD, EUR, INR",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Fatehabad Road, Opposite Gateway Hotel",
+        "addressLocality": "Agra",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "282001",
+        "addressCountry": "IN"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 27.1635, "longitude": 78.0413 },
+      "openingHours": "Mo-Su 00:00-24:00",
+      "areaServed": ["Agra", "Delhi", "Jaipur", "Golden Triangle, India"],
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1560" },
+      "sameAs": []
+    }
+    </script>
   </head>
   <body class="jakarta">
     <div id="root"></div>
+    <noscript>
+      <h1>Indiventure Travellers — Taj Mahal &amp; Golden Triangle Tours</h1>
+      <p>Private Taj Mahal, Agra, Delhi and Jaipur tours from $40 with government-licensed local guides. Call or WhatsApp +91&nbsp;98765&nbsp;43210 or email hello@indiventuretravellers.com. This website requires JavaScript for the full experience.</p>
+    </noscript>
     <script type="module" src="/index.tsx"></script>
   </body>
 </html>

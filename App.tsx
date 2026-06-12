@@ -1,33 +1,33 @@
-
-import React, { useEffect, Suspense } from 'react';
-import { 
-  BrowserRouter as Router, 
-  Routes, 
-  Route, 
-  useLocation 
+import React, { useEffect, Suspense, lazy } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation
 } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ContactButton from './components/ContactButton';
 import Home from './pages/Home';
-import Plans from './pages/Plans';
-import PlanDetail from './pages/PlanDetail';
-import Booking from './pages/Booking';
-import Contact from './pages/Contact';
-import FAQ from './pages/FAQ';
-import DigitalCard from './pages/DigitalCard';
-import GuideBooking from './pages/GuideBooking';
-import Destinations from './pages/Destinations';
-import Blog from './pages/Blog';
-import BlogDetail from './pages/BlogDetail';
-import Services from './pages/Services';
-import About from './pages/About';
-import Reviews from './pages/Reviews';
-import Legal from './pages/Legal';
+
+const Plans = lazy(() => import('./pages/Plans'));
+const PlanDetail = lazy(() => import('./pages/PlanDetail'));
+const Booking = lazy(() => import('./pages/Booking'));
+const Contact = lazy(() => import('./pages/Contact'));
+const FAQ = lazy(() => import('./pages/FAQ'));
+const DigitalCard = lazy(() => import('./pages/DigitalCard'));
+const GuideBooking = lazy(() => import('./pages/GuideBooking'));
+const Destinations = lazy(() => import('./pages/Destinations'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogDetail = lazy(() => import('./pages/BlogDetail'));
+const Services = lazy(() => import('./pages/Services'));
+const About = lazy(() => import('./pages/About'));
+const Reviews = lazy(() => import('./pages/Reviews'));
+const Legal = lazy(() => import('./pages/Legal'));
 
 // Loading state for Suspense
 const LoadingScreen = () => (
-  <div className="min-h-screen flex items-center justify-center bg-brand-bg">
+  <div className="min-h-screen flex items-center justify-center bg-brand-bg" role="status" aria-label="Loading page">
     <div className="w-16 h-16 border-4 border-brand-primary/20 border-t-brand-primary rounded-full animate-spin" />
   </div>
 );
@@ -48,10 +48,11 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const isPlanDetail = location.pathname.startsWith('/plans/');
 
   return (
-    <div className="flex flex-col min-h-screen inter overflow-x-hidden bg-brand-bg">
+    <div className="flex flex-col min-h-screen overflow-x-hidden bg-brand-bg">
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <ScrollToTop />
       {!isDigitalCard && !isPlanDetail && <Navbar />}
-      <main className="flex-grow">
+      <main id="main-content" className="flex-grow">
         {children}
       </main>
       {!isDigitalCard && <Footer />}
