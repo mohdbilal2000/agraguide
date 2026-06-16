@@ -5,7 +5,7 @@ import {
   CheckCircle2, Clock, MapPin,
   Star, MessageCircle, ArrowLeft, Shield, Award, CalendarCheck
 } from 'lucide-react';
-import { TOURS } from '../constants';
+import { TOURS, PRICE_DISCLAIMER } from '../constants';
 import OptimizedImage from '../components/OptimizedImage';
 import SEO, { SITE_URL } from '../components/SEO';
 
@@ -184,7 +184,10 @@ const PlanDetail: React.FC = () => {
                   {typeof tour.price === 'number' ? `$${tour.price}` : tour.price}
                 </span>
               </p>
-              <p className="text-xs text-gray-400 mb-8">per person · private tour</p>
+              <p className="text-xs text-gray-400 mb-5">per person · private tour</p>
+              <p className="text-[11px] text-gray-500 leading-relaxed bg-brand-bg rounded-xl p-3 mb-6 text-left">
+                {PRICE_DISCLAIMER}
+              </p>
               <Link to="/booking" className="block w-full bg-brand-primary text-white py-5 rounded-2xl font-bold text-lg shadow-xl hover:bg-brand-dark transition-all mb-3">
                 Book This Experience
               </Link>

@@ -1,6 +1,14 @@
 
 import { Tour, Destination, Review, BlogPost, GuidePackage } from './types';
 
+// Shown wherever a price appears. Prices are indicative starting points only —
+// monument entry fees and optional add-ons are extra, and the final quote
+// varies by group size and season. Keeps us from being held to a fixed number.
+export const PRICE_DISCLAIMER =
+  'Indicative starting price per person. Monument entry fees and optional add-ons are extra; the final price varies by group size and season. You’ll get an exact quote before you pay.';
+
+export const PRICE_DISCLAIMER_SHORT = 'From price, per person · entry fees & add-ons extra';
+
 export const GUIDE_PACKAGES: GuidePackage[] = [
   {
     id: 'guide-only',

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 // Fixed: Added Crown and Check to the lucide-react imports
 import { MapPin, Clock, Languages, Shield, CheckCircle, MessageSquare, ArrowRight, ArrowLeft, Crown, Check } from 'lucide-react';
-import { GUIDE_PACKAGES } from '../constants';
+import { GUIDE_PACKAGES, PRICE_DISCLAIMER } from '../constants';
 import OptimizedImage from '../components/OptimizedImage';
 
 const GuideBooking: React.FC = () => {
@@ -153,7 +153,7 @@ Language: ${selection.language}`;
                              <Crown size={80} />
                           </div>
                           <h4 className="text-2xl font-bold text-brand-dark mb-2">{p.name}</h4>
-                          <p className="text-brand-primary font-bold text-xl mb-4">{p.price} <span className="text-gray-400 text-sm font-normal">/ guest</span></p>
+                          <p className="text-brand-primary font-bold text-xl mb-4"><span className="text-gray-400 text-xs font-bold uppercase tracking-widest align-middle mr-1">From</span>{p.price} <span className="text-gray-400 text-sm font-normal">/ guest*</span></p>
                           <ul className="space-y-3">
                             {p.features.slice(0, 3).map((f, i) => (
                               <li key={i} className="flex items-center gap-3 text-sm text-gray-600">
@@ -164,6 +164,9 @@ Language: ${selection.language}`;
                         </button>
                       ))}
                    </div>
+                   <p className="text-xs text-gray-400 leading-relaxed text-center max-w-xl mx-auto">
+                     *{PRICE_DISCLAIMER}
+                   </p>
                 </div>
               )}
 

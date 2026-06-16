@@ -45,12 +45,15 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
             <span className="text-[10px] text-gray-400 font-bold ml-2">({tour.reviewsCount.toLocaleString()})</span>
           </div>
           <div className="text-right">
+            {typeof tour.price === 'number' && (
+              <span className="text-[9px] text-gray-400 font-bold uppercase tracking-widest block leading-none mb-0.5">From</span>
+            )}
             {tour.originalPrice && (
               <span className="text-gray-400 text-xs line-through block">${tour.originalPrice}</span>
             )}
             <span className="text-brand-primary font-bold playfair text-xl">
               {typeof tour.price === 'number' ? `$${tour.price}` : tour.price}
-              {typeof tour.price === 'number' && <span className="text-[10px] text-gray-400 font-sans font-medium uppercase tracking-wide"> /person</span>}
+              {typeof tour.price === 'number' && <span className="text-[10px] text-gray-400 font-sans font-medium uppercase tracking-wide"> /person*</span>}
             </span>
           </div>
         </div>
@@ -59,10 +62,15 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
           <Link to={`/plans/${tour.id}`} className="focus-visible:outline-none">{tour.title}</Link>
         </h3>
 
-        <div className="flex items-center gap-4 text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-6 pb-6 border-b border-brand-dark/5">
+        <div className="flex items-center gap-4 text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-3">
           <span className="flex items-center gap-1.5"><Clock size={12} className="text-brand-primary" aria-hidden="true" /> {tour.duration}</span>
           <span className="flex items-center gap-1.5"><Tag size={12} className="text-brand-primary" aria-hidden="true" /> Private Tour</span>
         </div>
+        <p className="text-[10px] text-gray-400 leading-snug mb-5 pb-5 border-b border-brand-dark/5">
+          {typeof tour.price === 'number'
+            ? '*Entry fees & optional add-ons extra. Final quote shared before payment.'
+            : 'Tailored itinerary — we’ll share a full quote before payment.'}
+        </p>
 
         <div className="flex gap-3 mt-auto">
           <Link

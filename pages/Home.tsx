@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 import TourCard from '../components/TourCard';
 import OptimizedImage from '../components/OptimizedImage';
 import SEO, { SITE_URL } from '../components/SEO';
-import { TOURS, REVIEWS, GUIDE_PACKAGES, DESTINATIONS, FAQS } from '../constants';
+import { TOURS, REVIEWS, GUIDE_PACKAGES, DESTINATIONS, FAQS, PRICE_DISCLAIMER } from '../constants';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight, Check, Car, Utensils, Crown, ShieldCheck,
@@ -190,8 +190,9 @@ const Home: React.FC = () => {
                     <Icon size={22} aria-hidden="true" />
                   </div>
                   <h3 className="text-lg font-bold mb-1">{pkg.name}</h3>
+                  <p className={`text-[10px] font-bold uppercase tracking-widest mb-0.5 ${highlight ? 'text-white/50' : 'text-gray-400'}`}>From</p>
                   <p className={`text-3xl font-bold playfair mb-6 ${highlight ? 'text-brand-gold' : 'text-brand-primary'}`}>
-                    {pkg.price}<span className={`text-xs font-sans font-medium ${highlight ? 'text-white/50' : 'text-gray-400'}`}> /day</span>
+                    {pkg.price}<span className={`text-xs font-sans font-medium ${highlight ? 'text-white/50' : 'text-gray-400'}`}> /day*</span>
                   </p>
                   <ul className={`space-y-3 text-sm mb-8 ${highlight ? 'text-white/80' : 'text-gray-600'}`}>
                     {pkg.features.map(f => (
@@ -214,6 +215,9 @@ const Home: React.FC = () => {
               );
             })}
           </div>
+          <p className="text-center text-xs text-gray-400 mt-8 max-w-2xl mx-auto leading-relaxed">
+            *{PRICE_DISCLAIMER}
+          </p>
         </div>
       </section>
 

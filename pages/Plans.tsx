@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import TourCard from '../components/TourCard';
 import OptimizedImage from '../components/OptimizedImage';
 import SEO, { SITE_URL } from '../components/SEO';
-import { TOURS } from '../constants';
+import { TOURS, PRICE_DISCLAIMER } from '../constants';
 import { Search, ChevronRight, Car, Building, Users, Utensils } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -124,6 +124,10 @@ const Plans: React.FC = () => {
             />
           </div>
         </div>
+
+        <p className="mb-6 text-xs text-gray-500 leading-relaxed bg-white border border-brand-dark/5 rounded-2xl px-5 py-3.5 shadow-soft">
+          <span className="font-bold text-brand-dark">Pricing note:</span> {PRICE_DISCLAIMER}
+        </p>
 
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4 px-2">
           <p className="text-gray-500 font-medium text-sm" role="status">
