@@ -42,7 +42,6 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
             {[...Array(5)].map((_, i) => (
               <Star key={i} size={14} aria-hidden="true" fill={i < Math.floor(typeof tour.rating === 'number' ? tour.rating : 0) ? "currentColor" : "none"} />
             ))}
-            {/* <span className="text-[10px] text-gray-400 font-bold ml-2">({tour.reviewsCount.toLocaleString()})</span> */}
           </div>
           <div className="text-right">
             {typeof tour.price === 'number' && (

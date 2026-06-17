@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-6 text-sm text-white/70">
               <li className="flex gap-4 items-start">
                 <MapPin className="text-brand-gold shrink-0 mt-1" size={18} />
-                <span>Fatehabad Road, Opposite Gateway Hotel, Agra, UP 282001, India</span>
+                <span>Mourya House, 299/A, DDA Flats, Munirka, New Delhi 110067, India</span>
               </li>
               <li className="flex gap-4 items-center">
                 <Phone className="text-brand-gold shrink-0" size={18} />
@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex gap-4 items-center">
                 <Mail className="text-brand-gold shrink-0" size={18} />
-                <a href="mailto:indiventuretravellers@gmail.com" className="hover:text-brand-gold transition-colors">hello@indiventuretravellers.com</a>
+                <a href="mailto:indiventuretravellers@gmail.com" className="hover:text-brand-gold transition-colors">indiventuretravellers@gmail.com</a>
               </li>
             </ul>
           </div>
