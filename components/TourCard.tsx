@@ -42,7 +42,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
             {[...Array(5)].map((_, i) => (
               <Star key={i} size={14} aria-hidden="true" fill={i < Math.floor(typeof tour.rating === 'number' ? tour.rating : 0) ? "currentColor" : "none"} />
             ))}
-            <span className="text-[10px] text-gray-400 font-bold ml-2">({tour.reviewsCount.toLocaleString()})</span>
+            {/* <span className="text-[10px] text-gray-400 font-bold ml-2">({tour.reviewsCount.toLocaleString()})</span> */}
           </div>
           <div className="text-right">
             {typeof tour.price === 'number' && (
@@ -80,7 +80,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
             View Details <ArrowRight size={14} aria-hidden="true" />
           </Link>
           <a
-            href={`https://wa.me/919876543210?text=${encodeURIComponent(`I'm interested in: ${tour.title}`)}`}
+            href={`https://wa.me/919217519989?text=${encodeURIComponent(`I'm interested in: ${tour.title}`)}`}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Ask about ${tour.title} on WhatsApp`}

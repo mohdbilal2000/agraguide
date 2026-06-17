@@ -358,7 +358,7 @@ const Home: React.FC = () => {
                   Browse All Tours
                 </Link>
                 <a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/919217519989"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white/10 border border-white/20 text-white px-10 py-5 rounded-2xl font-bold text-sm uppercase tracking-widest hover:bg-white/20 transition-all"

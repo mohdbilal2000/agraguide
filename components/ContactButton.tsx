@@ -75,7 +75,7 @@ const ContactButton: React.FC = () => {
             </div>
             <div className="p-4 flex flex-col gap-2">
               <a 
-                href="https://wa.me/919876543210" 
+                href="https://wa.me/919217519989" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-xl bg-brand-success/5 hover:bg-brand-success/10 text-brand-success transition-all border border-brand-success/10"
@@ -87,7 +87,7 @@ const ContactButton: React.FC = () => {
                 </div>
               </a>
               <a 
-                href="tel:+919876543210" 
+                href="tel:+919217519989" 
                 className="flex items-center gap-4 p-4 rounded-xl bg-brand-info/5 hover:bg-brand-info/10 text-brand-info transition-all border border-brand-info/10"
               >
                 <Phone fill="currentColor" className="text-brand-info" />

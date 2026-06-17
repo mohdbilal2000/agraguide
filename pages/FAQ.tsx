@@ -95,7 +95,7 @@ const FAQ: React.FC = () => {
                   Our travel consultants are available 24/7 to help you plan your perfect heritage journey. Reach out anytime!
                 </p>
                 <a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/919217519989"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-brand-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-brand-dark transition-all shadow-lg"

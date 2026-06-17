@@ -47,7 +47,7 @@ City: ${selection.city}
 Time: ${selection.time}
 Package: ${selection.package}
 Language: ${selection.language}`;
-    return `https://wa.me/919876543210?text=${encodeURIComponent(msg)}`;
+    return `https://wa.me/919217519989?text=${encodeURIComponent(msg)}`;
   };
 
   return (

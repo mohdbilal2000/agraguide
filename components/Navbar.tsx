@@ -151,7 +151,7 @@ const Navbar: React.FC = () => {
                 </Link>
               </div>
               <div className="mt-auto pt-8">
-                <a href="tel:+919876543210" className="p-6 bg-white rounded-3xl border border-brand-dark/5 flex items-center gap-4 hover:shadow-soft transition-shadow">
+                <a href="tel:+919217519989" className="p-6 bg-white rounded-3xl border border-brand-dark/5 flex items-center gap-4 hover:shadow-soft transition-shadow">
                   <span className="w-10 h-10 rounded-full bg-brand-success/10 flex items-center justify-center text-brand-success">
                     <Phone size={20} aria-hidden="true" />
                   </span>

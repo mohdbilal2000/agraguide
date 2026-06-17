@@ -64,11 +64,11 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex gap-4 items-center">
                 <Phone className="text-brand-gold shrink-0" size={18} />
-                <a href="tel:+919876543210" className="hover:text-brand-gold transition-colors">+91 98765 43210</a>
+                <a href="tel:+919217519989" className="hover:text-brand-gold transition-colors">+91 98765 43210</a>
               </li>
               <li className="flex gap-4 items-center">
                 <Mail className="text-brand-gold shrink-0" size={18} />
-                <a href="mailto:hello@indiventuretravellers.com" className="hover:text-brand-gold transition-colors">hello@indiventuretravellers.com</a>
+                <a href="mailto:indiventuretravellers@gmail.com" className="hover:text-brand-gold transition-colors">hello@indiventuretravellers.com</a>
               </li>
             </ul>
           </div>
