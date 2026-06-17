@@ -23,7 +23,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-brand-dark mb-1">Direct Call</h4>
-                    <p className="text-gray-500 font-medium">+91 98765 43210</p>
+                    <p className="text-gray-500 font-medium">+91 92175 19989</p>
                   </div>
                 </div>
                 <div className="flex gap-6">
@@ -41,7 +41,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-brand-dark mb-1">Email Support</h4>
-                    <p className="text-gray-500 font-medium">hello@indiventuretravellers.com</p>
+                    <p className="text-gray-500 font-medium">indiventuretravellers@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -103,8 +103,8 @@ const Contact: React.FC = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/70 via-brand-dark/20 to-transparent" />
               <div className="absolute bottom-8 left-8 right-8">
-                <h3 className="text-2xl font-bold playfair text-white mb-2">Agra Office</h3>
-                <p className="text-white/90 text-sm">Fatehabad Road, Opposite Gateway Hotel</p>
+                <h3 className="text-2xl font-bold playfair text-white mb-2">Delhi Office</h3>
+                <p className="text-white/90 text-sm">Mourya House, 299/A, DDA Flats, Munirka, New Delhi</p>
               </div>
             </div>
             <div className="rounded-[3rem] overflow-hidden h-96 relative shadow-2xl">

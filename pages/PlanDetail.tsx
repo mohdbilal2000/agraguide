@@ -98,9 +98,6 @@ const PlanDetail: React.FC = () => {
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 md:px-5 py-2 md:py-3 rounded-xl border border-white/20">
               <Clock size={14} className="text-brand-gold" aria-hidden="true" /> {tour.duration}
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 md:px-5 py-2 md:py-3 rounded-xl border border-white/20">
-              <Star size={14} className="text-brand-gold" fill="currentColor" aria-hidden="true" /> {tour.rating} ({tour.reviewsCount.toLocaleString()} reviews)
-            </div>
             {tour.pickup !== 'N/A' && (
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 md:px-5 py-2 md:py-3 rounded-xl border border-white/20">
                 <MapPin size={14} className="text-brand-gold" aria-hidden="true" /> Hotel Pickup Included
@@ -187,7 +184,7 @@ const PlanDetail: React.FC = () => {
                 Book This Experience
               </Link>
               <a
-                href={`https://wa.me/919876543210?text=${encodeURIComponent(`I'd like to book: ${tour.title}`)}`}
+                href={`https://wa.me/919217519989?text=${encodeURIComponent(`I'd like to book: ${tour.title}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full bg-brand-success/10 text-brand-success py-4 rounded-2xl font-bold hover:bg-brand-success hover:text-white transition-all"

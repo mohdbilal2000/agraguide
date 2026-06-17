@@ -71,7 +71,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
             to={`/plans/${tour.id}`}
             className="flex-1 bg-brand-primary text-white py-4 rounded-xl font-bold text-xs uppercase tracking-widest text-center transition-all hover:bg-brand-dark shadow-lg shadow-brand-primary/10 flex items-center justify-center gap-2"
           >
-            <a View Details ArrowRight size={14} aria-hidden="true" />
+            View Details <ArrowRight size={14} aria-hidden="true" />
           </Link>
           
             <a href={`https://wa.me/919217519989?text=${encodeURIComponent(`I'm interested in: ${tour.title}`)}`}

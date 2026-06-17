@@ -93,7 +93,7 @@ const ContactButton: React.FC = () => {
                 <Phone fill="currentColor" className="text-brand-info" />
                 <div className="text-left">
                   <p className="font-bold">Call Now</p>
-                  <p className="text-xs opacity-70">+91 98765 43210</p>
+                  <p className="text-xs opacity-70">+91 9217519989</p>
                 </div>
               </a>
               <a 

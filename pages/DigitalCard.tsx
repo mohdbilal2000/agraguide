@@ -31,11 +31,11 @@ const DigitalCard: React.FC = () => {
           </div>
 
           <div className="space-y-3">
-            <a href="tel:+919876543210" className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-sm border border-brand-dark/5 hover:bg-brand-primary hover:text-white transition-all group">
+            <a href="tel:+919217519989" className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-sm border border-brand-dark/5 hover:bg-brand-primary hover:text-white transition-all group">
                <Phone className="text-brand-primary group-hover:text-white" size={20} />
                <span className="font-bold inter">+91 98765 43210</span>
             </a>
-            <a href="https://wa.me/919876543210" className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-sm border border-brand-dark/5 hover:bg-brand-success hover:text-white transition-all group">
+            <a href="https://wa.me/919217519989" className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-sm border border-brand-dark/5 hover:bg-brand-success hover:text-white transition-all group">
                <Globe className="text-brand-success group-hover:text-white" size={20} />
                <span className="font-bold inter">Chat on WhatsApp</span>
             </a>
