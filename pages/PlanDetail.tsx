@@ -45,11 +45,6 @@ const PlanDetail: React.FC = () => {
         "priceCurrency": "USD",
         "price": typeof tour.price === 'number' ? tour.price : undefined,
         "availability": "https://schema.org/InStock"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": tour.rating,
-        "reviewCount": tour.reviewsCount
       }
     },
     {

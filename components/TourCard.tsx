@@ -37,12 +37,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
       </div>
 
       <div className="p-7 md:p-8 flex flex-col flex-grow">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center text-brand-gold" aria-label={`Rated ${tour.rating} out of 5 from ${tour.reviewsCount} reviews`}>
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} size={14} aria-hidden="true" fill={i < Math.floor(typeof tour.rating === 'number' ? tour.rating : 0) ? "currentColor" : "none"} />
-            ))}
-          </div>
+        <div className="flex items-center justify-end mb-4">
           <div className="text-right">
             {typeof tour.price === 'number' && (
               <span className="text-[9px] text-gray-400 font-bold uppercase tracking-widest block leading-none mb-0.5">From</span>
@@ -78,7 +73,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
           >
             View Details <ArrowRight size={14} aria-hidden="true" />
           </Link>
-          <a
+          
             href={`https://wa.me/919217519989?text=${encodeURIComponent(`I'm interested in: ${tour.title}`)}`}
             target="_blank"
             rel="noopener noreferrer"
