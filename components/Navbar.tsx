@@ -157,7 +157,7 @@ const Navbar: React.FC = () => {
                   </span>
                   <span>
                     <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest">24/7 Help Desk</span>
-                    <span className="block font-bold text-brand-dark text-sm">+91 98765 43210</span>
+                    <span className="block font-bold text-brand-dark text-sm">+91 92175 19989</span>
                   </span>
                 </a>
               </div>

@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
           >
             <div className="inline-flex items-center gap-2 bg-brand-gold text-brand-dark px-4 py-1.5 rounded-full mb-6 shadow-xl">
               <Star size={12} fill="currentColor" aria-hidden="true" />
-              <span className="text-[10px] font-bold uppercase tracking-widest">Rated 4.9/5 · 1,560+ Reviews</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest">Rated 5.0 by Our Travellers Reviews</span>
             </div>
 
             <AnimatePresence mode="wait">
