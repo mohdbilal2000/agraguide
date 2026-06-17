@@ -10,10 +10,10 @@
     <link rel="canonical" href="https://indiventuretravellers.com/" />
 
     <!-- Local relevance -->
-    <meta name="geo.region" content="IN-UP" />
-    <meta name="geo.placename" content="Agra, Uttar Pradesh, India" />
-    <meta name="geo.position" content="27.1635;78.0413" />
-    <meta name="ICBM" content="27.1635, 78.0413" />
+    <meta name="geo.region" content="IN-DL" />
+    <meta name="geo.placename" content="Munirka, New Delhi, India" />
+    <meta name="geo.position" content="28.5545;77.1707" />
+    <meta name="ICBM" content="28.5545, 77.1707" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -43,28 +43,39 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "TravelAgency",
-      "@id": "https://indiventuretravellers.com/#organization",
-      "name": "Indiventure Travellers",
-      "url": "https://indiventuretravellers.com",
-      "description": "Private heritage tour agency specializing in Taj Mahal, Agra and Golden Triangle tours with government-licensed local guides since 1998.",
-      "telephone": "+919876543210",
-      "email": "hello@indiventuretravellers.com",
-      "priceRange": "$40 - $500",
-      "currenciesAccepted": "USD, EUR, INR",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Fatehabad Road, Opposite Gateway Hotel",
-        "addressLocality": "Agra",
-        "addressRegion": "Uttar Pradesh",
-        "postalCode": "282001",
-        "addressCountry": "IN"
-      },
-      "geo": { "@type": "GeoCoordinates", "latitude": 27.1635, "longitude": 78.0413 },
-      "openingHours": "Mo-Su 00:00-24:00",
-      "areaServed": ["Agra", "Delhi", "Jaipur", "Golden Triangle, India"],
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1560" },
-      "sameAs": []
+      "@graph": [
+        {
+          "@type": "TravelAgency",
+          "@id": "https://indiventuretravellers.com/#organization",
+          "name": "Indiventure Travellers",
+          "url": "https://indiventuretravellers.com",
+          "description": "Private heritage tour agency specializing in Taj Mahal, Agra and Golden Triangle tours with local guides since 1998.",
+          "telephone": "+919217519989",
+          "email": "indiventuretravellers@gmail.com",
+          "priceRange": "$40 - $500",
+          "currenciesAccepted": "USD, EUR, INR",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Mourya House, 299/A, DDA Flats, Munirka",
+            "addressLocality": "New Delhi",
+            "addressRegion": "Delhi",
+            "postalCode": "110067",
+            "addressCountry": "IN"
+          },
+          "geo": { "@type": "GeoCoordinates", "latitude": 28.5545, "longitude": 77.1707 },
+          "openingHours": "Mo-Su 00:00-24:00",
+          "areaServed": ["Agra", "Delhi", "Jaipur", "Golden Triangle, India"],
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "6" },
+          "sameAs": ["https://www.instagram.com/indiventuretravellers/"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://indiventuretravellers.com/#website",
+          "url": "https://indiventuretravellers.com",
+          "name": "Indiventure Travellers",
+          "publisher": { "@id": "https://indiventuretravellers.com/#organization" }
+        }
+      ]
     }
     </script>
   </head>
@@ -72,7 +83,7 @@
     <div id="root"></div>
     <noscript>
       <h1>Indiventure Travellers — Taj Mahal &amp; Golden Triangle Tours</h1>
-      <p>Private Taj Mahal, Agra, Delhi and Jaipur tours from $40 with government-licensed local guides. Call or WhatsApp +91&nbsp;98765&nbsp;43210 or email hello@indiventuretravellers.com. This website requires JavaScript for the full experience.</p>
+      <p>Private Taj Mahal, Agra, Delhi and Jaipur tours from $40 with government-licensed local guides. Call or WhatsApp +91&nbsp;92175&nbsp;19989 or email indiventuretravellers@gmail.com. This website requires JavaScript for the full experience.</p>
     </noscript>
     <script type="module" src="/index.tsx"></script>
   </body>
