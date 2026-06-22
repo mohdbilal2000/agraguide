@@ -70,9 +70,12 @@ const server = await startServer();
 const routes = await getRoutes();
 console.log(`[prerender] rendering ${routes.length} routes`);
 
+chromium.setGraphicsMode = false;
 const browser = await puppeteer.launch({
-  headless: true,
-  args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+  args: chromium.args,
+  executablePath: await chromium.executablePath(),
+  headless: chromium.headless,
+  defaultViewport: { width: 1280, height: 1800 },
 });
 
 let ok = 0;
