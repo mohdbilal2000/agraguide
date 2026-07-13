@@ -61,7 +61,7 @@ const Home: React.FC = () => {
     <div className="w-full flex flex-col overflow-x-hidden">
       <SEO
         title="Taj Mahal & Golden Triangle Tours with Local Experts"
-        description="Private Taj Mahal, Agra, Delhi & Jaipur tours from $40 with government-licensed local guides. Sunrise tours, same-day trips from Delhi, and luxury Golden Triangle packages since 1998."
+        description="Private Taj Mahal, Agra, Delhi & Jaipur tours from $40 with government-licensed local guides. Sunrise tours, same-day trips from Delhi, and luxury Golden Triangle packages since 2015."
         canonical="/"
         schema={schema}
       />
@@ -268,7 +268,7 @@ const Home: React.FC = () => {
         <div className="page-container relative z-10">
           <motion.div {...fadeUp} className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
             <span className="text-brand-gold font-bold tracking-[0.3em] text-[10px] md:text-xs uppercase mb-3 block">Guest Stories</span>
-            <h2 id="reviews-heading" className="display-lg font-bold playfair text-white mb-4">Rated 5.0 by Our Travellers</h2>
+            <h2 id="reviews-heading" className="display-lg font-bold playfair text-white mb-4">Rated 5.0/5 on Google</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
