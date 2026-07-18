@@ -5,7 +5,7 @@
     {
       "source": "/(.*)",
       "has": [{ "type": "host", "value": ".*\\.vercel\\.app" }],
-      "destination": "https://www.indiventuretravellers.com/$1",
+      "destination": "https://indiventuretravellers.com/$1",
       "permanent": true
     }
   ],
