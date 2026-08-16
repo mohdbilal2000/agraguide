@@ -32,30 +32,40 @@ const Home: React.FC = () => {
     { name: 'Photography Tours', desc: 'Golden-hour led shoots', image: 'https://images.unsplash.com/photo-1564507592333-c60657451dc6?auto=format&fit=crop&w=800&q=75' }
   ];
 
-  const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Indiventure Travellers",
-      "url": SITE_URL,
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": `${SITE_URL}/plans?q={search_term_string}`,
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Featured Taj Mahal & Golden Triangle Tours",
-      "itemListElement": featuredTours.map((tour, i) => ({
-        "@type": "ListItem",
-        "position": i + 1,
+const schema = [
+  {
+    "@type": "ItemList",
+    "name": "Featured Taj Mahal & Golden Triangle Tours",
+    "itemListElement": featuredTours.map((tour, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": {
+        "@type": "Product",
+        "@id": `${SITE_URL}/plans/${tour.id}#product`,
         "name": tour.title,
-        "url": `${SITE_URL}/plans/${tour.id}`
-      }))
-    }
-  ];
+        "url": `${SITE_URL}/plans/${tour.id}`,
+        "image": tour.image,
+        ...(typeof tour.price === 'number' && {
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": tour.price.toFixed(2),
+            "availability": "https://schema.org/InStock"
+          }
+        })
+      }
+    }))
+  },
+  {
+    "@type": "FAQPage",
+    "@id": `${SITE_URL}/#faq`,
+    "mainEntity": FAQS.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+    }))
+  }
+];
 
   return (
     <div className="w-full flex flex-col overflow-x-hidden">
