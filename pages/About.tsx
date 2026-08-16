@@ -3,10 +3,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import OptimizedImage from '../components/OptimizedImage';
 import { Award, ShieldCheck, Heart, History, Users, MapPin } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const About: React.FC = () => {
   return (
     <div className="pt-32 pb-24 bg-brand-bg min-h-screen">
+      <SEO title="..." description="..." canonical="/about" pageType="AboutPage" breadcrumbs={[{ name: 'About' }]} />
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
           <motion.div
@@ -15,7 +17,7 @@ const About: React.FC = () => {
             className="space-y-8"
           >
             <span className="text-brand-primary font-bold tracking-widest text-xs uppercase block">Our Legacy</span>
-            <h1 className="text-5xl md:text-7xl font-bold playfair text-brand-dark leading-tight">Authentic Heritage Since 1998</h1>
+            <h1 className="text-5xl md:text-7xl font-bold playfair text-brand-dark leading-tight">Authentic Heritage Since 2015</h1>
             <p className="text-xl text-gray-600 leading-relaxed font-light italic">"We don't just show you the Taj Mahal; we reveal the stories etched in its marble."</p>
             <p className="text-lg text-gray-500 leading-relaxed inter">Indiventure Travellers began as a small collective of history enthusiasts in Agra. Today, we have grown into a premier network of government-licensed guides covering the entire Golden Triangle.</p>
             <div className="grid grid-cols-2 gap-8 pt-8">
