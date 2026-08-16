@@ -6,6 +6,26 @@ import { Link } from 'react-router-dom';
 import { BLOG_POSTS } from '../constants';
 import OptimizedImage from '../components/OptimizedImage';
 import { Calendar, User, ArrowRight } from 'lucide-react';
+import SEO, { SITE_URL } from '../components/SEO';
+
+const blogSchema = {
+  "@type": "Blog",
+  "@id": `${SITE_URL}/blog#blog`,
+  "name": "The Heritage Blog",
+  "description": "Insider tips, historical deep-dives and culinary guides from our local guides.",
+  "publisher": { "@id": `${SITE_URL}/#organization` },
+  "blogPost": BLOG_POSTS.map(p => ({
+    "@type": "BlogPosting",
+    "@id": `${SITE_URL}/blog/${p.slug}#post`,
+    "headline": p.title,
+    "description": p.excerpt,
+    "image": p.image,
+    "url": `${SITE_URL}/blog/${p.slug}`,
+    "author": { "@type": "Person", "name": p.author },
+    "publisher": { "@id": `${SITE_URL}/#organization` },
+    "articleSection": p.category
+  }))
+};
 
 const Blog: React.FC = () => {
   const [filter, setFilter] = useState('All');
@@ -15,6 +35,14 @@ const Blog: React.FC = () => {
 
   return (
     <div className="pt-32 pb-24 bg-brand-bg min-h-screen">
+      <SEO
+        title="Travel Guides & Tips — Taj Mahal, Agra and the Golden Triangle"
+        description="Practical guides on Taj Mahal timings, ticket prices, photography spots and planning a Golden Triangle trip, written by our licensed guides."
+        canonical="/blog"
+        pageType="CollectionPage"
+        breadcrumbs={[{ name: 'Blog' }]}
+        schema={blogSchema}
+      />
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold playfair text-brand-dark mb-6">The Heritage Blog</h1>
