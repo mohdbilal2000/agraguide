@@ -8,12 +8,7 @@ import OptimizedImage from '../components/OptimizedImage';
 
 const GuideBooking: React.FC = () => {
   const [step, setStep] = useState(1);
-  const [selection, setSelection] = useState<any>({
-    city: '',
-    time: '',
-    package: '',
-    language: 'English'
-  });
+ const [selection, setSelection] = useState({ city: '', time: '', package: '', language: 'English' });
 
   const steps = [
     { id: 1, label: 'City', icon: MapPin },
@@ -52,6 +47,12 @@ Language: ${selection.language}`;
 
   return (
     <div className="pt-32 pb-24 bg-brand-bg min-h-screen">
+      <SEO
+        title="Hire a Government-Licensed Local Guide in Agra, Delhi or Jaipur"
+        description="Book a licensed heritage guide by the day. Choose your city, start time and service level — confirm in one tap on WhatsApp."
+        canonical="/guide-booking"
+        breadcrumbs={[{ name: 'Hemant Kumar' }]}
+      />
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-16">
           <div className="inline-block mb-6">
@@ -197,10 +198,7 @@ Language: ${selection.language}`;
 
                    <div className="flex flex-col sm:flex-row gap-4 pt-6">
                       <button onClick={() => setStep(1)} className="flex-1 py-5 rounded-2xl font-bold text-gray-500 bg-gray-100 hover:bg-gray-200 transition-all">Start Over</button>
-                      <a 
-                        href={generateWhatsAppMsg()}
-                        className="flex-[2] py-5 rounded-2xl font-bold bg-brand-success text-white flex items-center justify-center gap-3 hover:bg-brand-success/90 transition-all shadow-2xl shadow-brand-success/20 text-lg"
-                      >
+                     <a href={generateWhatsAppMsg()} target="_blank" rel="noopener noreferrer" ...>
                         <MessageSquare size={24} /> Confirm on WhatsApp
                       </a>
                    </div>
