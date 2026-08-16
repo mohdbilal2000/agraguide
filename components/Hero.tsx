@@ -111,7 +111,7 @@ const Hero: React.FC = () => {
 
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-white/70 text-xs md:text-sm font-medium">
               <span className="flex items-center gap-2"><ShieldCheck size={16} className="text-brand-gold" aria-hidden="true" /> Government-licensed guides</span>
-              <span className="flex items-center gap-2"><Users size={16} className="text-brand-gold" aria-hidden="true" /> Private tours since 1998</span>
+              <span className="flex items-center gap-2"><Users size={16} className="text-brand-gold" aria-hidden="true" /> Private tours since 2015</span>
               <span className="flex items-center gap-2"><Star size={16} className="text-brand-gold" aria-hidden="true" /> Free cancellation 24h</span>
             </div>
           </motion.div>
