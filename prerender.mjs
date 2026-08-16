@@ -15,6 +15,10 @@ const DIST = join(__dirname, 'dist');
 const HOST = '127.0.0.1';
 const PORT = 4317;
 const ORIGIN = `http://${HOST}:${PORT}`;
+const SITE_ORIGIN = 'https://indiventuretravellers.com';
+
+// Escape hatch for incremental rollout: PRERENDER_ALLOW_MISSING_SEO=1 npm run build
+const ALLOW_MISSING_SEO = process.env.PRERENDER_ALLOW_MISSING_SEO === '1';
 
 const MIME = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.mjs': 'text/javascript',
@@ -80,11 +84,15 @@ const browser = await puppeteer.launch({
 
 let ok = 0;
 let failed = 0;
+const missingSeo = [];
+const badCanonical = [];
+
 for (const route of routes) {
   const page = await browser.newPage();
   await page.setViewport({ width: 1280, height: 1800 });
   try {
     await page.goto(`${ORIGIN}${route}`, { waitUntil: 'domcontentloaded', timeout: 45000 });
+
     // Wait until the lazy chunk has mounted (loading spinner gone) and real content exists.
     await page.waitForFunction(() => {
       const loading = document.querySelector('[aria-label="Loading page"]');
@@ -92,6 +100,16 @@ for (const route of routes) {
       const text = root ? (root.innerText || '').trim() : '';
       return !loading && text.length > 120;
     }, { timeout: 45000 });
+
+    // The <SEO> component writes the head inside useEffect. Without this wait the
+    // snapshot can be taken first, baking the homepage title/canonical into every route.
+    try {
+      await page.waitForSelector('html[data-seo-ready="true"]', { timeout: 10000 });
+    } catch {
+      missingSeo.push(route);
+      console.warn(`  ! ${route} — no <SEO> mounted; head falls back to the homepage's`);
+    }
+
     // Trigger any in-view (framer-motion) sections, then let it settle.
     await page.evaluate(async () => {
       await new Promise((resolve) => {
@@ -106,6 +124,17 @@ for (const route of routes) {
       });
     });
     await new Promise((r) => setTimeout(r, 350));
+
+    // Verify the canonical actually points at this route — the exact bug that
+    // silently de-indexed 8 pages. Cheap to check, so check every build.
+    const canonical = await page.evaluate(
+      () => document.querySelector('link[rel="canonical"]')?.getAttribute('href') || ''
+    );
+    const expected = `${SITE_ORIGIN}${route === '/' ? '/' : route}`;
+    if (canonical.replace(/\/$/, '') !== expected.replace(/\/$/, '')) {
+      badCanonical.push({ route, canonical: canonical || '(none)' });
+      console.warn(`  ! ${route} — canonical is "${canonical || '(none)'}", expected "${expected}"`);
+    }
 
     const html = await page.content();
     const outPath = route === '/' ? join(DIST, 'index.html') : join(DIST, route, 'index.html');
@@ -123,8 +152,37 @@ for (const route of routes) {
 
 await browser.close();
 server.close();
-console.log(`[prerender] done — ${ok} rendered, ${failed} failed`);
+
+console.log(`\n[prerender] done — ${ok} rendered, ${failed} failed`);
+
 if (ok === 0) {
   console.error('[prerender] nothing rendered; failing build.');
   process.exit(1);
+}
+
+// ---- SEO gate -------------------------------------------------------------
+let fatal = false;
+
+if (missingSeo.length) {
+  console.error(`\n[prerender] ${missingSeo.length} route(s) have no <SEO> component:`);
+  missingSeo.forEach((r) => console.error(`    ${r}`));
+  console.error('  These inherit the homepage title, description and canonical, so Google');
+  console.error('  treats them as duplicates of "/" and drops them from the index.');
+  console.error('  Fix: render <SEO title=… description=… canonical="…" /> in each page.');
+  fatal = true;
+}
+
+if (badCanonical.length) {
+  console.error(`\n[prerender] ${badCanonical.length} route(s) have a wrong canonical:`);
+  badCanonical.forEach(({ route, canonical }) => console.error(`    ${route}  ->  ${canonical}`));
+  fatal = true;
+}
+
+if (fatal) {
+  if (ALLOW_MISSING_SEO) {
+    console.warn('\n[prerender] PRERENDER_ALLOW_MISSING_SEO=1 set — shipping anyway.');
+  } else {
+    console.error('\n[prerender] failing build. Set PRERENDER_ALLOW_MISSING_SEO=1 to override.');
+    process.exit(1);
+  }
 }
