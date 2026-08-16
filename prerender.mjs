@@ -17,8 +17,8 @@ const PORT = 4317;
 const ORIGIN = `http://${HOST}:${PORT}`;
 const SITE_ORIGIN = 'https://indiventuretravellers.com';
 
-// Escape hatch for incremental rollout: PRERENDER_ALLOW_MISSING_SEO=1 npm run build
-const ALLOW_MISSING_SEO = process.env.PRERENDER_ALLOW_MISSING_SEO === '1';
+// Warn by default; set STRICT_SEO=1 in CI once every route has <SEO>.
+const ALLOW_MISSING_SEO = process.env.STRICT_SEO !== '1';
 
 const MIME = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.mjs': 'text/javascript',
