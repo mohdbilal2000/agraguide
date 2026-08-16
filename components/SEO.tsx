@@ -4,7 +4,7 @@ export const SITE_URL = 'https://indiventuretravellers.com';
 export const SITE_NAME = 'Indiventure Travellers';
 
 /** Self-hosted. Replace the Unsplash default — see note at the bottom. */
-const DEFAULT_IMAGE = `${SITE_URL}/img/og-default-1200x630.jpg`;
+const DEFAULT_IMAGE = `${SITE_URL}/og-default-1200x630.jpg`;
 
 export type Crumb = { name: string; path?: string };
 
