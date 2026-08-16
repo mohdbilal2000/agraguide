@@ -8,8 +8,12 @@ import OptimizedImage from '../components/OptimizedImage';
 
 const GuideBooking: React.FC = () => {
   const [step, setStep] = useState(1);
- const [selection, setSelection] = useState({ city: '', time: '', package: '', language: 'English' });
+  
+type Selection = { city: string; time: string; package: string; language: string };
 
+const [selection, setSelection] = useState<Selection>({
+  city: '', time: '', package: '', language: 'English'
+});
   const steps = [
     { id: 1, label: 'City', icon: MapPin },
     { id: 2, label: 'Time', icon: Clock },
@@ -31,10 +35,10 @@ const GuideBooking: React.FC = () => {
     { label: 'Full Day (Intensive)', note: 'Most complete' }
   ];
 
-  const handleSelect = (key: string, value: string) => {
-    setSelection({ ...selection, [key]: value });
-    if (step < 4) setStep(step + 1);
-  };
+  const handleSelect = (key: keyof Selection, value: string) => {
+  setSelection((prev) => ({ ...prev, [key]: value }));
+  if (step < 4) setStep(step + 1);
+};
 
   const generateWhatsAppMsg = () => {
     const msg = `Heritage Inquiry from Website:
