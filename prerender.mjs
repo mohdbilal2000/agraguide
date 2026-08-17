@@ -17,6 +17,12 @@ const PORT = 4317;
 const ORIGIN = `http://${HOST}:${PORT}`;
 const SITE_ORIGIN = 'https://indiventuretravellers.com';
 
+// Timeouts are deliberately short. A page that has not rendered in 15s is broken,
+// not slow — and long timeouts turn one bug into a 30-minute build.
+const NAV_TIMEOUT = 15000;
+const RENDER_TIMEOUT = 15000;
+const SEO_TIMEOUT = 5000;
+
 // Warn by default; set STRICT_SEO=1 in CI once every route has <SEO>.
 const ALLOW_MISSING_SEO = process.env.STRICT_SEO !== '1';
 
@@ -86,13 +92,28 @@ let ok = 0;
 let failed = 0;
 const missingSeo = [];
 const badCanonical = [];
+const pageErrors = new Map();   // route -> first JS error seen
 
 for (const route of routes) {
   const page = await browser.newPage();
-  page.setDefaultTimeout(45000);
+  page.setDefaultTimeout(NAV_TIMEOUT);
   await page.setViewport({ width: 1280, height: 1800 });
+
+  // Surface in-page failures. Without this a crashed bundle looks identical to a
+  // slow one: every route just times out with no clue why.
+  page.on('pageerror', (err) => {
+    if (!pageErrors.has(route)) pageErrors.set(route, err.message);
+    console.warn(`  ⚠ ${route} — JS error: ${err.message}`);
+  });
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') console.warn(`  ⚠ ${route} — console: ${msg.text()}`);
+  });
+  page.on('requestfailed', (req) => {
+    console.warn(`  ⚠ ${route} — request failed: ${req.url()} (${req.failure()?.errorText})`);
+  });
+
   try {
-    await page.goto(`${ORIGIN}${route}`, { waitUntil: 'domcontentloaded', timeout: 45000 });
+    await page.goto(`${ORIGIN}${route}`, { waitUntil: 'domcontentloaded', timeout: NAV_TIMEOUT });
 
     // Wait until the lazy chunk has mounted (loading spinner gone) and real content exists.
     await page.waitForFunction(() => {
@@ -100,18 +121,18 @@ for (const route of routes) {
       const root = document.getElementById('root');
       const text = root ? (root.innerText || '').trim() : '';
       return !loading && text.length > 120;
-    }, { timeout: 45000 });
+    }, { timeout: RENDER_TIMEOUT });
 
     // The <SEO> component writes the head inside useEffect. Without this wait the
     // snapshot can be taken first, baking the homepage title/canonical into every route.
     try {
-      await page.waitForSelector('html[data-seo-ready="true"]', { timeout: 10000 });
+      await page.waitForSelector('html[data-seo-ready="true"]', { timeout: SEO_TIMEOUT });
     } catch {
       missingSeo.push(route);
       console.warn(`  ! ${route} — no <SEO> mounted; head falls back to the homepage's`);
     }
 
-   // Trigger any in-view (framer-motion) sections, then let it settle.
+    // Trigger any in-view (framer-motion) sections, then let it settle.
     // Hard-capped: scrollHeight can keep growing (lazy images, marquees), and an
     // uncapped loop here hangs the whole build with no timeout to save it.
     await page.evaluate(async () => {
@@ -165,8 +186,17 @@ server.close();
 
 console.log(`\n[prerender] done — ${ok} rendered, ${failed} failed`);
 
+// If nothing rendered, the app itself is broken. Print the JS errors prominently:
+// that is the actual cause, and it is easy to miss among 30 identical timeouts.
 if (ok === 0) {
-  console.error('[prerender] nothing rendered; failing build.');
+  console.error('\n[prerender] NOTHING rendered — the app is not booting in the browser.');
+  if (pageErrors.size) {
+    console.error('[prerender] JavaScript errors seen:');
+    for (const [route, message] of pageErrors) console.error(`    ${route}  ->  ${message}`);
+  } else {
+    console.error('[prerender] No JS error was captured. Check that dist/assets/*.js loaded,');
+    console.error('  and run "npm run dev" locally to see the failure in the browser console.');
+  }
   process.exit(1);
 }
 
@@ -188,11 +218,16 @@ if (badCanonical.length) {
   fatal = true;
 }
 
+if (failed > 0) {
+  console.warn(`\n[prerender] ${failed} route(s) failed to render and were NOT written.`);
+  console.warn('  Those URLs will 404 in production. Fix them before relying on the sitemap.');
+}
+
 if (fatal) {
   if (ALLOW_MISSING_SEO) {
-    console.warn('\n[prerender] PRERENDER_ALLOW_MISSING_SEO=1 set — shipping anyway.');
+    console.warn('\n[prerender] STRICT_SEO not set — shipping anyway.');
   } else {
-    console.error('\n[prerender] failing build. Set PRERENDER_ALLOW_MISSING_SEO=1 to override.');
+    console.error('\n[prerender] failing build. Unset STRICT_SEO to ship regardless.');
     process.exit(1);
   }
 }
