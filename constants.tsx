@@ -591,17 +591,98 @@ export const REVIEWS: Review[] = [
   }
 ];
 
+// Replace the existing FAQS array in constants.tsx with this one.
+// Figures verified August 2026 — re-check ticket prices each year, since ASI revises them.
+
 export const FAQS = [
   {
     question: "Is the Taj Mahal closed on any days?",
-    answer: "Yes, the Taj Mahal is closed every Friday for prayers. It is open on all other days, including weekends and public holidays."
+    answer:
+      "Yes. The Taj Mahal is closed every Friday for congregational prayers at the mosque inside the complex, with no exceptions. It is open all other days, including weekends and public holidays. If your trip only allows a Friday in Agra, we shift the itinerary to Agra Fort, Fatehpur Sikri and Mehtab Bagh, where you still get the classic across-the-river view of the Taj."
   },
   {
-    question: "What is the best time for photography?",
-    answer: "Sunrise and sunset offer the most dramatic lighting. We recommend the sunrise tour to beat both the midday heat and the large crowds."
+    question: "What does a Taj Mahal ticket cost for foreign visitors in 2026?",
+    answer:
+      "A foreign (non-SAARC) adult ticket is ₹1,300 — ₹1,100 for monument entry plus ₹200 for the mausoleum supplement that lets you step onto the marble platform and see the cenotaphs. SAARC and BIMSTEC passport holders pay ₹740, and Indian citizens ₹250. Children under 15 enter free but still need to be registered online for a zero-value QR code. Entry tickets are not included in our tour prices unless the tour page says so, and we tell you the exact amount before you book."
+  },
+  {
+    question: "What are the Taj Mahal opening and closing times?",
+    answer:
+      "The Taj Mahal opens at 6:00 AM and closes 30 minutes before sunset, which is usually around 6:30 PM. Last entry is 30 minutes before closing. Your ticket is valid for a three-hour visit from the moment you enter; staying longer can attract an extra charge at the exit gate."
+  },
+  {
+    question: "How early does the sunrise tour pick up from Delhi?",
+    answer:
+      "We pick you up from your Delhi hotel at around 3:00 AM so you reach the East Gate by 5:30 AM, when security screening starts ahead of the 6:00 AM opening. That queue position is the whole point of the sunrise tour — you are inside as the first light hits the marble, before the crowds and the heat."
+  },
+  {
+    question: "What is the best time of day for Taj Mahal photography?",
+    answer:
+      "Sunrise gives the softest light, the fewest people in frame and a chance at reflections in the watercourse. Sunset is warmer and more dramatic but far busier. Midday is the hardest — the marble goes flat and white in overhead sun. One winter caveat: January fog in Agra can hide the monument completely until about 10:00 AM."
+  },
+  {
+    question: "Delhi to Agra — is the car or the Gatimaan Express better?",
+    answer:
+      "The Gatimaan Express (train 12050) leaves Hazrat Nizamuddin around 8:10 AM and reaches Agra Cantt around 9:50 AM — roughly 1 hour 40 minutes, with the return departing Agra around 5:50 PM. It is faster and more comfortable, but locks you to fixed timings. A private car takes about 3 to 3.5 hours each way on the Yamuna Expressway, and lets you leave at 3:00 AM for sunrise, stop where you like, and stay as long as you want. For a same-day trip built around sunrise, the car wins; for a relaxed late-morning start, the train is excellent."
+  },
+  {
+    question: "Do you book the monument entry tickets for us?",
+    answer:
+      "Yes, we handle the booking so you are not queuing at a counter. Note that the Taj Mahal is now digital-payment only at the gates — no cash — so having tickets arranged in advance saves real time. We confirm what is included and what you pay separately before you book, in writing."
+  },
+  {
+    question: "Is a same-day Taj Mahal trip from Delhi too rushed?",
+    answer:
+      "It is a long day, but it works well when it is planned around sunrise rather than a late start. A typical day is a 3:00 AM pickup, sunrise at the Taj, breakfast, a guided visit to Agra Fort, lunch, and back in Delhi by early evening — around 12 hours door to door. If you would rather not do it in one push, the overnight version gives you sunrise and sunset in Agra without the pre-dawn drive."
+  },
+  {
+    question: "What is your cancellation and refund policy?",
+    answer:
+      "You can cancel or change a confirmed booking up to 24 hours before the tour start time at no charge, subject to availability. Inside 24 hours, costs already committed to the driver or to monument tickets may apply. Nothing is charged at the time of booking — we confirm guide and vehicle availability first, then arrange payment."
+  },
+  {
+    question: "Are your guides government-licensed, and can we see proof?",
+    answer:
+      "Yes. Our guides hold Ministry of Tourism regional guide licences, and you are welcome to ask to see the licence card at the start of your tour. An unlicensed guide cannot legally take you inside ASI monuments, which is why this matters more than it sounds."
   },
   {
     question: "Do you provide female heritage guides?",
-    answer: "Yes, we have a collective of professional female heritage guides available upon request to ensure comfort and safety for solo female travelers."
+    answer:
+      "Yes. We work with a collective of professional female heritage guides who can be requested at the time of booking, subject to availability on your date. Many solo and family travellers prefer this, and there is no extra charge for it."
+  },
+  {
+    question: "Is it safe for solo female travellers?",
+    answer:
+      "Yes, and it is a large part of who we host. You are with a licensed guide and a known driver for the whole day, pickup and drop are at your hotel door rather than a public meeting point, and you have a direct WhatsApp line to us throughout. Female guides are available on request. If you would like your itinerary and vehicle details shared with someone at home before the tour, just ask."
+  },
+  {
+    question: "What vehicle will we get, and is it air-conditioned?",
+    answer:
+      "All tours use private air-conditioned vehicles with a professional chauffeur — a sedan for couples and small groups, an SUV or tempo traveller for larger parties. The vehicle stays with you for the whole day; you are never left waiting for a shared pickup."
+  },
+  {
+    question: "What should I wear, and what is not allowed inside the Taj Mahal?",
+    answer:
+      "There is no strict dress code, but modest clothing covering shoulders and knees is respectful and more comfortable in the heat. Shoe covers are provided for the marble platform. Tripods, drones, large bags, food, cigarettes and any electronic items beyond a phone and camera are not allowed inside; your driver can hold anything you cannot carry in."
+  },
+  {
+    question: "Can we see the Taj Mahal at night?",
+    answer:
+      "Night viewing runs on five nights per lunar cycle — the full moon night plus the two nights before and after — from 8:30 PM to 12:30 AM, in batches of 50 people for 30-minute slots. Tickets must be arranged at least 24 hours in advance, and it is not available on Fridays or during Ramadan. Tell us your dates and we will check whether they fall in a viewing window."
+  },
+  {
+    question: "How do we pay, and is a deposit required?",
+    answer:
+      "We accept cash, UPI, bank transfer and card. No payment is taken through the website — we confirm availability for your dates first, then send payment details on WhatsApp. For most single-day tours no deposit is needed; multi-day tours with hotel bookings usually need a part payment to hold the rooms."
+  },
+  {
+    question: "When is the best time of year to visit Agra and Rajasthan?",
+    answer:
+      "October to March is the comfortable season, with clear skies and pleasant days. December and January mornings can be foggy in Agra, which sometimes delays the sunrise view. April to June gets very hot — tours are still enjoyable if built around early mornings. July to September brings the monsoon, fewer crowds, lower prices and a green Rajasthan, with occasional rain to plan around."
+  },
+  {
+    question: "Can you customise an itinerary or add Udaipur or a tiger safari?",
+    answer:
+      "Yes — most of our multi-day trips start as a standard route and get reshaped. Common additions are Udaipur, Ranthambore for a tiger safari, Varanasi, and Jodhpur or Jaisalmer for the desert forts. Send us your dates, rough budget and what you care about most, and we will build the route around that rather than fitting you into a fixed package."
   }
 ];
