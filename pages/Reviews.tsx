@@ -8,7 +8,7 @@ const WHATSAPP_NUMBER = '919217519989';
 
 /** Paste the Google Business Profile review link once it exists, e.g.
  *  https://g.page/r/XXXXXXXX/review  — leave empty to hide the button. */
-const GOOGLE_REVIEW_URL = '';
+const GOOGLE_REVIEW_URL = 'https://g.page/r/CS9HSF8iHKJeEBM/review';
 
 const initials = (name: string) =>
   name
