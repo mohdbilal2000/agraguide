@@ -81,8 +81,9 @@ const App: React.FC = () => {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/digital-card" element={<DigitalCard />} />
-            <Route path="/privacy" element={<Legal title="Privacy Policy" />} />
-            <Route path="/terms" element={<Legal title="Terms of Service" />} />
+            <Route path="/privacy" element={<Legal title="Privacy Policy" variant="privacy" />} />
+            <Route path="/terms" element={<Legal title="Terms of Service" variant="terms" />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </MainLayout>
