@@ -1,34 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://indiventuretravellers.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://indiventuretravellers.com/plans</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://indiventuretravellers.com/guide-booking</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://indiventuretravellers.com/destinations</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://indiventuretravellers.com/booking</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://indiventuretravellers.com/services</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://indiventuretravellers.com/about</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://indiventuretravellers.com/contact</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://indiventuretravellers.com/faq</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://indiventuretravellers.com/reviews</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://indiventuretravellers.com/blog</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://indiventuretravellers.com/blog/b1</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://indiventuretravellers.com/blog/b2</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://indiventuretravellers.com/plans/sunrise-taj-tour</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://indiventuretravellers.com/plans/same-day-taj-car</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://indiventuretravellers.com/plans/same-day-taj-train</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://indiventuretravellers.com/plans/same-day-jaipur</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://indiventuretravellers.com/plans/overnight-taj-tour</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://indiventuretravellers.com/plans/agra-wildlife-sos</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://indiventuretravellers.com/plans/agra-fatehpur-sikri</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://indiventuretravellers.com/plans/golden-triangle-3d</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://indiventuretravellers.com/plans/golden-triangle-4d</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://indiventuretravellers.com/plans/golden-triangle-5d</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://indiventuretravellers.com/plans/golden-triangle-tiger</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://indiventuretravellers.com/plans/golden-triangle-udaipur</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://indiventuretravellers.com/plans/rajasthan-7d</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://indiventuretravellers.com/plans/rajasthan-8d</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://indiventuretravellers.com/plans/rajasthan-9d</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://indiventuretravellers.com/plans/rajasthan-12d</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://indiventuretravellers.com/plans/taj-photography-tour</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://indiventuretravellers.com/plans/delhi-photography-tour</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- Core -->
+  <url><loc>https://indiventuretravellers.com/</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://indiventuretravellers.com/plans</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://indiventuretravellers.com/guide-booking</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://indiventuretravellers.com/booking</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://indiventuretravellers.com/destinations</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://indiventuretravellers.com/services</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://indiventuretravellers.com/faq</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://indiventuretravellers.com/about</loc><lastmod>2026-08-17</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://indiventuretravellers.com/contact</loc><lastmod>2026-08-17</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://indiventuretravellers.com/reviews</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+
+  <!-- Blog -->
+  <url><loc>https://indiventuretravellers.com/blog</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://indiventuretravellers.com/blog/taj-mahal-timing-guide</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://indiventuretravellers.com/blog/agra-food-guide</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Tours -->
+  <url><loc>https://indiventuretravellers.com/plans/sunrise-taj-tour</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://indiventuretravellers.com/plans/same-day-taj-car</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://indiventuretravellers.com/plans/golden-triangle-3d</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://indiventuretravellers.com/plans/same-day-taj-train</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://indiventuretravellers.com/plans/same-day-jaipur</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://indiventuretravellers.com/plans/overnight-taj-tour</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://indiventuretravellers.com/plans/agra-fatehpur-sikri</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://indiventuretravellers.com/plans/golden-triangle-4d</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://indiventuretravellers.com/plans/golden-triangle-5d</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://indiventuretravellers.com/plans/golden-triangle-tiger</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://indiventuretravellers.com/plans/golden-triangle-udaipur</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://indiventuretravellers.com/plans/rajasthan-7d</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://indiventuretravellers.com/plans/rajasthan-8d</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://indiventuretravellers.com/plans/rajasthan-9d</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://indiventuretravellers.com/plans/rajasthan-12d</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://indiventuretravellers.com/plans/taj-photography-tour</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://indiventuretravellers.com/plans/delhi-photography-tour</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://indiventuretravellers.com/plans/agra-wildlife-sos</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <!-- Legal -->
+  <url><loc>https://indiventuretravellers.com/privacy</loc><lastmod>2026-08-17</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://indiventuretravellers.com/terms</loc><lastmod>2026-08-17</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+
 </urlset>
