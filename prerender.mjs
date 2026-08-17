@@ -89,6 +89,7 @@ const badCanonical = [];
 
 for (const route of routes) {
   const page = await browser.newPage();
+  page.setDefaultTimeout(45000);
   await page.setViewport({ width: 1280, height: 1800 });
   try {
     await page.goto(`${ORIGIN}${route}`, { waitUntil: 'domcontentloaded', timeout: 45000 });
@@ -110,15 +111,24 @@ for (const route of routes) {
       console.warn(`  ! ${route} — no <SEO> mounted; head falls back to the homepage's`);
     }
 
-    // Trigger any in-view (framer-motion) sections, then let it settle.
+   // Trigger any in-view (framer-motion) sections, then let it settle.
+    // Hard-capped: scrollHeight can keep growing (lazy images, marquees), and an
+    // uncapped loop here hangs the whole build with no timeout to save it.
     await page.evaluate(async () => {
       await new Promise((resolve) => {
         let y = 0;
+        let steps = 0;
+        const MAX_STEPS = 60;          // 60 × 700px ≈ 42,000px of page
         const step = () => {
           window.scrollBy(0, 700);
           y += 700;
-          if (y >= document.body.scrollHeight) { window.scrollTo(0, 0); resolve(); }
-          else setTimeout(step, 40);
+          steps++;
+          if (steps >= MAX_STEPS || y >= document.body.scrollHeight) {
+            window.scrollTo(0, 0);
+            resolve();
+          } else {
+            setTimeout(step, 40);
+          }
         };
         step();
       });
