@@ -24,6 +24,7 @@ const Services = lazy(() => import('./pages/Services'));
 const About = lazy(() => import('./pages/About'));
 const Reviews = lazy(() => import('./pages/Reviews'));
 const Legal = lazy(() => import('./pages/Legal'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Loading state for Suspense
 const LoadingScreen = () => (
