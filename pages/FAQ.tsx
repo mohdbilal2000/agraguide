@@ -53,7 +53,7 @@ const FAQ: React.FC = () => {
             <div className="inline-block mb-8">
               <div className="rounded-[2rem] overflow-hidden shadow-lift h-64 w-full max-w-md mx-auto">
                 <OptimizedImage
-                  src="https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=800&q=75"
+                  src="/taj-mahal-dawn.webp"
                   alt="The Taj Mahal in Agra at dawn"
                   sizes="(min-width: 768px) 28rem, 100vw"
                   className="w-full h-full object-cover"
@@ -180,8 +180,8 @@ const FAQ: React.FC = () => {
               </div>
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <OptimizedImage
-                  src="https://images.unsplash.com/photo-1524492707947-2f85a64b6bb1?auto=format&fit=crop&w=600&q=75"
-                  alt="Hawa Mahal in Jaipur, one of the Golden Triangle stops we cover"
+                  src="/rajasthan-palace-hotel.webp"
+                  alt="A heritage palace hotel in Rajasthan, one of the stops on our longer trips"
                   sizes="(min-width: 768px) 50vw, 100vw"
                   className="w-full h-64 object-cover"
                 />
