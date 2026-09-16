@@ -14,7 +14,7 @@ const serviceList = [
     title: 'Heritage Guiding',
     desc: 'Government-licensed guides who bring the stones of Agra and Jaipur to life with authentic storytelling.',
     color: 'bg-brand-primary/10 text-brand-primary',
-    image: 'https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=400&q=80',
+    image: '/taj-mahal-dawn.webp',
     href: '/guide-booking',
     cta: 'Hire a Guide',
   },
@@ -32,7 +32,7 @@ const serviceList = [
     title: 'Culinary Experiences',
     desc: 'Curated food walks and lunch reservations at traditional kitchens and 5-star restaurants alike.',
     color: 'bg-brand-gold/10 text-brand-gold',
-    image: 'https://images.unsplash.com/photo-1601050638917-3d9197176192?auto=format&fit=crop&w=400&q=80',
+    image: '/chai-stop-with-driver.webp',
     href: '/contact',
     cta: 'Ask Us',
   },
@@ -155,7 +155,7 @@ const Services: React.FC = () => {
         <div className="mt-24 bg-brand-dark rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-20">
             <OptimizedImage
-              src="https://images.unsplash.com/photo-1590050752117-23a97b62b423?auto=format&fit=crop&w=1200&q=80"
+              src="/humayuns-tomb-family.webp"
               alt=""
               sizes="100vw"
               className="h-full w-full"
