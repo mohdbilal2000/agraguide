@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 
 const slides = [
   {
-    image: 'https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=1600&q=75',
+    image: '/taj-mahal-dawn.webp',
     alt: 'The Taj Mahal at sunrise reflected in the long pool, Agra, India',
     eyebrow: 'Agra · Sunrise Tours',
     subtitle: 'Step beyond the crowds with Agra’s premier heritage storytellers.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1524492707947-2f85a64b6bb1?auto=format&fit=crop&w=1600&q=75',
+    image: '/rajasthan-palace-hotel.webp',
     alt: 'Hawa Mahal palace facade in Jaipur on the Golden Triangle route',
     eyebrow: 'Delhi · Agra · Jaipur',
     subtitle: 'A seamless luxury passage through Delhi, Agra, and Jaipur.'
