@@ -277,7 +277,7 @@ const Contact: React.FC = () => {
             </div>
             <div className="rounded-[3rem] overflow-hidden h-96 relative shadow-2xl">
               <OptimizedImage
-                src="https://images.unsplash.com/photo-1599661046289-e3189785002a?auto=format&fit=crop&w=800&q=80"
+                src="/rajasthan-palace-hotel.webp"
                 alt="Jaipur heritage architecture"
                 className="h-full w-full object-cover"
               />
@@ -290,7 +290,7 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="rounded-[3rem] overflow-hidden h-96 relative shadow-2xl">
-            <OptimizedImage src="https://images.unsplash.com/photo-1564507592333-c60657451dc6?auto=format&fit=crop&w=1200&q=80" alt="The Taj Mahal at dawn" className="h-full w-full" />
+            <OptimizedImage src="/taj-mahal-reflection.webp" alt="The Taj Mahal at dawn" className="h-full w-full" />
             <div className="absolute inset-0 bg-brand-dark/50 flex items-center justify-center text-center p-8">
               <div className="max-w-2xl">
                 <h3 className="text-3xl md:text-4xl font-bold playfair text-white mb-4">We Meet You Where You Are</h3>
