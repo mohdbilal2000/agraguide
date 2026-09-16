@@ -1,4 +1,3 @@
-
 import { Guide } from './types';
 
 /**
@@ -22,7 +21,7 @@ export const GUIDES: Guide[] = [
     cardTitle: 'Taj Mahal Sunrise Guide',
     cardSummary:
       'The gate time changes every month. Here is when to arrive, which gate to choose, and an honest account of the first hour.',
-    image: 'https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=1200&q=80',
+    image: '/taj-mahal-dawn.webp',
     updated: '2026-09-16',
     intro: [
       'The Taj Mahal does not open at a fixed clock time. It opens roughly 30 minutes before sunrise and closes 30 minutes before sunset, which means the gate time shifts by almost two hours between June and December. Most guides quoting a flat "6 AM" are wrong for half the year.',
@@ -152,7 +151,7 @@ export const GUIDES: Guide[] = [
     cardTitle: 'Delhi to Agra Travel Guide',
     cardSummary:
       'Train, private car, bus and self-drive — with real timings, honest costs, and the return-leg problem nobody mentions.',
-    image: 'https://images.unsplash.com/photo-1524492707947-2f85a64b6bb1?auto=format&fit=crop&w=1200&q=80',
+    image: '/chai-stop-with-driver.webp',
     updated: '2026-09-16',
     intro: [
       'Agra sits about 230 km south of Delhi. The Yamuna Expressway covers it in three to three and a half hours by road; the Gatimaan Express does it in one hour forty. Both are good options, and which one suits you depends almost entirely on what time you want to be standing in front of the Taj Mahal.',
@@ -280,7 +279,7 @@ export const GUIDES: Guide[] = [
     cardTitle: 'Taj Mahal on Fridays',
     cardSummary:
       'Yes, every Friday, no exceptions. Here is what is still worth doing in Agra that day — including the view most visitors never see.',
-    image: 'https://images.unsplash.com/photo-1585135497273-1a86d9d43495?auto=format&fit=crop&w=1200&q=80',
+    image: '/taj-mahal-reflection.webp',
     updated: '2026-09-16',
     intro: [
       'Yes. The Taj Mahal is closed to visitors every Friday, without exception, including public holidays and peak season. The mosque inside the complex holds congregational prayers that day and the monument is not open for general viewing.',
