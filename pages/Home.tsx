@@ -26,10 +26,10 @@ const Home: React.FC = () => {
     .slice(0, 6);
 
   const categories = [
-    { name: 'Same Day Tours', desc: 'Delhi → Taj Mahal & back', image: 'https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=800&q=75' },
-    { name: 'Golden Triangle', desc: 'Delhi · Agra · Jaipur', image: 'https://images.unsplash.com/photo-1599661046289-e3189785002a?auto=format&fit=crop&w=800&q=75' },
-    { name: 'Royal Rajasthan', desc: 'Palaces, forts & deserts', image: 'https://images.unsplash.com/photo-1524492707947-2f85a64b6bb1?auto=format&fit=crop&w=800&q=75' },
-    { name: 'Photography Tours', desc: 'Golden-hour led shoots', image: 'https://images.unsplash.com/photo-1564507592333-c60657451dc6?auto=format&fit=crop&w=800&q=75' }
+    { name: 'Same Day Tours', desc: 'Delhi → Taj Mahal & back', image: '/taj-mahal-dawn.webp' },
+    { name: 'Golden Triangle', desc: 'Delhi · Agra · Jaipur', image: '/rajasthan-palace-hotel.webp' },
+    { name: 'Royal Rajasthan', desc: 'Palaces, forts & deserts', image: '/rajasthan-palace-hotel.webp' },
+    { name: 'Photography Tours', desc: 'Golden-hour led shoots', image: '/taj-mahal-reflection.webp' }
   ];
 
 const schema = [
@@ -351,7 +351,7 @@ const schema = [
           <motion.div {...fadeUp} className="bg-brand-dark rounded-[2.5rem] md:rounded-[3.5rem] p-10 md:p-20 text-white relative overflow-hidden text-center shadow-2xl">
             <div className="absolute inset-0 opacity-10">
               <OptimizedImage
-                src="https://images.unsplash.com/photo-1587474260584-1f35a4088f1c?auto=format&fit=crop&w=1600&q=75"
+                src="/red-fort-delhi.webp"
                 alt=""
                 sizes="100vw"
                 className="h-full w-full"
