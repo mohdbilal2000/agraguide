@@ -1,7 +1,7 @@
 import React from 'react';
 /* Fix: Import Link from react-router-dom */
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
 
 import OptimizedImage from './OptimizedImage';
 
@@ -26,9 +26,7 @@ const Footer: React.FC = () => {
               India's premier heritage collective. We specialize in providing authentic local perspectives across the Golden Triangle and beyond.
             </p>
             <div className="flex gap-4">
-              <a href="#" aria-label="Instagram" className="p-3 bg-white/5 hover:bg-brand-primary hover:text-white rounded-full transition-all border border-white/10"><Instagram size={18} aria-hidden="true" /></a>
-              <a href="#" aria-label="Facebook" className="p-3 bg-white/5 hover:bg-brand-primary hover:text-white rounded-full transition-all border border-white/10"><Facebook size={18} aria-hidden="true" /></a>
-              <a href="#" aria-label="Twitter / X" className="p-3 bg-white/5 hover:bg-brand-primary hover:text-white rounded-full transition-all border border-white/10"><Twitter size={18} aria-hidden="true" /></a>
+              <a href="https://www.instagram.com/indiventuretravellers/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="p-3 bg-white/5 hover:bg-brand-primary hover:text-white rounded-full transition-all border border-white/10"><Instagram size={18} aria-hidden="true" /></a>
             </div>
           </div>
 
@@ -38,6 +36,7 @@ const Footer: React.FC = () => {
               <li><Link to="/plans" className="hover:text-brand-gold transition-colors">Tour Plans</Link></li>
               <li><Link to="/guide-booking" className="hover:text-brand-gold transition-colors">Book a Guide</Link></li>
               <li><Link to="/destinations" className="hover:text-brand-gold transition-colors">Destinations</Link></li>
+              <li><Link to="/guides" className="hover:text-brand-gold transition-colors">Travel Guides</Link></li>
               <li><Link to="/services" className="hover:text-brand-gold transition-colors">Our Services</Link></li>
               <li><Link to="/reviews" className="hover:text-brand-gold transition-colors">Guest Reviews</Link></li>
             </ul>
