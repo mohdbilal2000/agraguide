@@ -180,7 +180,7 @@ const Plans: React.FC = () => {
 
         <div className="mt-24 bg-brand-dark rounded-[2.5rem] md:rounded-[3.5rem] p-8 md:p-20 text-white relative overflow-hidden text-center shadow-2xl">
           <div className="absolute inset-0 opacity-10">
-            <OptimizedImage src="https://images.unsplash.com/photo-1599661046289-e3189785002a?auto=format&fit=crop&w=1200&q=75" alt="" sizes="100vw" className="h-full w-full" />
+            <OptimizedImage src="/rajasthan-palace-hotel.webp" alt="" sizes="100vw" className="h-full w-full" />
           </div>
           <div className="relative z-10 max-w-3xl mx-auto">
             <h2 className="display-lg font-bold playfair mb-6">Need a Custom Itinerary?</h2>
