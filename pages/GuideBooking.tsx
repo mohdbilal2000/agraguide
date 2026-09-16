@@ -20,10 +20,10 @@ const steps = [
 ];
 
 const cities = [
-  { name: 'Agra', img: 'https://images.unsplash.com/photo-1564507592333-c60657451dc6?auto=format&fit=crop&w=400&q=80' },
-  { name: 'Delhi', img: 'https://images.unsplash.com/photo-1587474260584-1f35a4088f1c?auto=format&fit=crop&w=400&q=80' },
-  { name: 'Jaipur', img: 'https://images.unsplash.com/photo-1477584264176-51fa4e89f40c?auto=format&fit=crop&w=400&q=80' },
-  { name: 'Mathura', img: 'https://images.unsplash.com/photo-1596422846543-75c6fc183f27?auto=format&fit=crop&w=400&q=80' },
+  { name: 'Agra', img: '/taj-mahal-reflection.webp' },
+  { name: 'Delhi', img: '/red-fort-delhi.webp' },
+  { name: 'Jaipur', img: '/india-gate-group.webp' },
+  { name: 'Mathura', img: '/ranthambore-tiger.webp' },
 ];
 
 const times = [
@@ -70,7 +70,7 @@ const GuideBooking: React.FC = () => {
           <div className="inline-block mb-6">
             <div className="rounded-2xl overflow-hidden shadow-xl h-48 w-full max-w-md mx-auto">
               <OptimizedImage
-                src="https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=800&q=80"
+                src="/taj-mahal-dawn.webp"
                 alt="A licensed heritage guide at the Taj Mahal"
                 sizes="(min-width: 768px) 28rem, 100vw"
                 className="w-full h-full object-cover"
