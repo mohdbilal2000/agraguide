@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import OptimizedImage from '../components/OptimizedImage';
@@ -37,7 +36,7 @@ const About: React.FC = () => {
             className="relative"
           >
             <div className="rounded-[3rem] overflow-hidden shadow-2xl h-[600px] relative">
-              <OptimizedImage src="https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=1000&q=80" alt="Guide Team in front of Taj Mahal" />
+              <OptimizedImage src="/taj-mahal-dawn.webp" alt="The Taj Mahal at dawn, before the gates fill" />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent" />
             </div>
             <div className="absolute -bottom-10 -left-10 bg-white p-8 rounded-[2rem] shadow-2xl max-w-xs border border-brand-dark/5 z-10">
@@ -71,13 +70,13 @@ const About: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="h-80 rounded-[2rem] overflow-hidden shadow-lg">
-              <OptimizedImage src="https://images.unsplash.com/photo-1599661046289-e3189785002a?auto=format&fit=crop&w=600&q=80" alt="Amber Fort Jaipur" />
+              <OptimizedImage src="/rajasthan-palace-hotel.webp" alt="A heritage palace hotel in Rajasthan" />
             </div>
             <div className="h-80 rounded-[2rem] overflow-hidden shadow-lg md:translate-y-8">
-              <OptimizedImage src="https://images.unsplash.com/photo-1587474260584-1f35a4088f1c?auto=format&fit=crop&w=600&q=80" alt="Humayun Tomb Delhi" />
+              <OptimizedImage src="/red-fort-delhi.webp" alt="Humayun Tomb Delhi" />
             </div>
             <div className="h-80 rounded-[2rem] overflow-hidden shadow-lg">
-              <OptimizedImage src="https://images.unsplash.com/photo-1564507592333-c60657451dc6?auto=format&fit=crop&w=600&q=80" alt="Taj Mahal Detail" />
+              <OptimizedImage src="/taj-mahal-reflection.webp" alt="Taj Mahal Detail" />
             </div>
           </div>
         </section>
