@@ -569,12 +569,12 @@ export const FAQS = [
   {
     question: "What are the Taj Mahal opening and closing times?",
     answer:
-      "The Taj Mahal opens at 6:00 AM and closes 30 minutes before sunset, which is usually around 6:30 PM. Last entry is 30 minutes before closing. Your ticket is valid for a three-hour visit from the moment you enter; staying longer can attract an extra charge at the exit gate."
+      "The Taj Mahal does not open at a fixed clock time. The Archaeological Survey of India opens it 30 minutes before sunrise and closes it 30 minutes before sunset, so the gate time moves through the year — roughly 6:35 AM in December and as early as 4:55 AM in June. Ticket counters open about an hour before sunrise. Your ticket is valid for a three-hour visit from the moment you enter; staying longer can attract an extra charge at the exit gate."
   },
   {
     question: "How early does the sunrise tour pick up from Delhi?",
     answer:
-      "We pick you up from your Delhi hotel at around 3:00 AM so you reach the East Gate by 5:30 AM, when security screening starts ahead of the 6:00 AM opening. That queue position is the whole point of the sunrise tour — you are inside as the first light hits the marble, before the crowds and the heat."
+      "It depends on your travel month, because the monument opens 30 minutes before sunrise rather than at a set time. In winter that means a pickup around 3:00 AM; in summer, closer to 1:30 AM — which is why we usually suggest the overnight version between May and July. We time the pickup so you reach the East Gate about 20 minutes before the gate opens, because security screening is the real bottleneck and that queue position is the whole point of the sunrise tour."
   },
   {
     question: "What is the best time of day for Taj Mahal photography?",
