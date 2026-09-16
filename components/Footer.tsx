@@ -1,4 +1,3 @@
-
 import React from 'react';
 /* Fix: Import Link from react-router-dom */
 import { Link } from 'react-router-dom';
@@ -11,7 +10,7 @@ const Footer: React.FC = () => {
     <footer className="bg-brand-dark text-white pt-24 pb-12 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         <OptimizedImage 
-          src="https://images.unsplash.com/photo-1564507592333-c60657451dc6?auto=format&fit=crop&w=2000&q=80"
+          src="/taj-mahal-reflection.webp"
           alt="Background"
           className="w-full h-full object-cover"
         />
