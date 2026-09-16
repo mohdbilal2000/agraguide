@@ -13,6 +13,12 @@
   <url><loc>https://indiventuretravellers.com/contact</loc><lastmod>2026-08-17</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://indiventuretravellers.com/reviews</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 
+  <!-- Travel guides -->
+  <url><loc>https://indiventuretravellers.com/guides</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://indiventuretravellers.com/guides/taj-mahal-sunrise</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://indiventuretravellers.com/guides/delhi-to-agra</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://indiventuretravellers.com/guides/taj-mahal-friday-closed</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
   <!-- Blog -->
   <url><loc>https://indiventuretravellers.com/blog</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://indiventuretravellers.com/blog/taj-mahal-timing-guide</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
