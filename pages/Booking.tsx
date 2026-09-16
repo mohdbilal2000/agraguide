@@ -154,7 +154,7 @@ const Booking: React.FC = () => {
           <div className="inline-block mb-6">
             <div className="rounded-2xl overflow-hidden shadow-xl h-48 w-full max-w-md mx-auto">
               <OptimizedImage
-                src="https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=800&q=80"
+                src="/taj-mahal-dawn.webp"
                 alt="The Taj Mahal at sunrise"
                 className="w-full h-full object-cover"
               />
