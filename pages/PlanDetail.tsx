@@ -31,6 +31,10 @@ const PlanDetail: React.FC = () => {
 
   const tourUrl = `${SITE_URL}/plans/${tour.id}`;
 
+  // An Offer without priceValidUntil is treated as stale after a while.
+  // Rolls forward automatically to the end of the current year.
+  const priceValidUntil = `${new Date().getFullYear()}-12-31`;
+
   const schema = [
     {
       "@context": "https://schema.org",
@@ -44,6 +48,7 @@ const PlanDetail: React.FC = () => {
         "url": tourUrl,
         "priceCurrency": "USD",
         "price": typeof tour.price === 'number' ? tour.price : undefined,
+        "priceValidUntil": priceValidUntil,
         "availability": "https://schema.org/InStock"
       }
     },
@@ -101,6 +106,11 @@ const PlanDetail: React.FC = () => {
             {tour.pickup !== 'N/A' && (
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 md:px-5 py-2 md:py-3 rounded-xl border border-white/20">
                 <MapPin size={14} className="text-brand-gold" aria-hidden="true" /> Hotel Pickup Included
+              </div>
+            )}
+            {tour.isMostBooked && (
+              <div className="flex items-center gap-2 bg-brand-gold/20 backdrop-blur-md px-3 md:px-5 py-2 md:py-3 rounded-xl border border-brand-gold/40">
+                <Star size={14} className="text-brand-gold" fill="currentColor" aria-hidden="true" /> Most Booked
               </div>
             )}
           </div>
@@ -162,16 +172,8 @@ const PlanDetail: React.FC = () => {
 
           <aside className="lg:col-span-4">
             <div className="sticky top-8 bg-white p-8 md:p-10 rounded-[2rem] shadow-lift border border-brand-dark/5 text-center">
-              {tour.discount && (
-                <span className="inline-block bg-red-500 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-4 rounded-full mb-4">
-                  {tour.discount} — Limited Time
-                </span>
-              )}
               <span className="text-xs uppercase font-bold text-gray-400 tracking-widest mb-2 block">Starting From</span>
               <p className="mb-2">
-                {tour.originalPrice && (
-                  <span className="text-gray-400 text-xl line-through mr-3 align-middle">${tour.originalPrice}</span>
-                )}
                 <span className="text-5xl font-bold playfair text-brand-dark align-middle">
                   {typeof tour.price === 'number' ? `$${tour.price}` : tour.price}
                 </span>
