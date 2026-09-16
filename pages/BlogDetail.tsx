@@ -67,6 +67,14 @@ const BlogDetail: React.FC = () => {
     mainEntityOfPage: { '@id': `${SITE_URL}/blog/${post.slug}#webpage` },
   };
 
+  // A post this short has nothing to rank for, and sending Google a page of
+  // 30 words drags the whole domain's quality average down. Keep it reachable
+  // for anyone who follows a link, but keep it out of the index until it is
+  // actually written. Remove the guard by writing the article, not by editing
+  // this line.
+  const wordCount = (post.content ?? '').trim().split(/\s+/).filter(Boolean).length;
+  const tooThinToIndex = wordCount < 400;
+
   return (
     <div className="pt-32 pb-24 bg-brand-bg min-h-screen">
       <SEO
@@ -77,6 +85,7 @@ const BlogDetail: React.FC = () => {
         type="article"
         breadcrumbs={[{ name: 'Blog', path: '/blog' }, { name: post.title }]}
         schema={blogSchema}
+        noindex={tooThinToIndex}
       />
       <div className="container mx-auto px-4 md:px-8 max-w-5xl">
         <Link
