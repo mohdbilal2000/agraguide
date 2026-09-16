@@ -24,6 +24,8 @@ const Services = lazy(() => import('./pages/Services'));
 const About = lazy(() => import('./pages/About'));
 const Reviews = lazy(() => import('./pages/Reviews'));
 const Legal = lazy(() => import('./pages/Legal'));
+const Guides = lazy(() => import('./pages/Guides'));
+const GuideDetail = lazy(() => import('./pages/GuideDetail'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Loading state for Suspense
@@ -72,6 +74,8 @@ const App: React.FC = () => {
             <Route path="/plans" element={<Plans />} />
             <Route path="/plans/:id" element={<PlanDetail />} />
             <Route path="/guide-booking" element={<GuideBooking />} />
+            <Route path="/guides" element={<Guides />} />
+            <Route path="/guides/:slug" element={<GuideDetail />} />
             <Route path="/destinations" element={<Destinations />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="/services" element={<Services />} />
