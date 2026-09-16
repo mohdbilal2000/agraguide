@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Star, Clock, ArrowRight, Tag, MessageCircle } from 'lucide-react';
+import { Star, Clock, ArrowRight, Tag, MessageCircle, ShieldCheck } from 'lucide-react';
 import { Tour } from '../types';
 import OptimizedImage from './OptimizedImage';
 
@@ -13,11 +13,6 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
     <article className="group bg-white rounded-[2rem] overflow-hidden shadow-soft hover:shadow-lift hover:-translate-y-1 transition-all duration-500 border border-brand-dark/5 flex flex-col h-full">
       <div className="relative h-64 overflow-hidden">
         <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
-          {tour.discount && (
-            <span className="bg-red-500 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-3 rounded-full shadow-lg">
-              {tour.discount}
-            </span>
-          )}
           {tour.isMostBooked && (
             <span className="bg-brand-gold text-brand-dark text-[10px] font-bold uppercase tracking-widest py-1 px-3 rounded-full flex items-center gap-1 shadow-lg">
               <Star size={10} fill="currentColor" aria-hidden="true" /> Most Booked
@@ -42,9 +37,6 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
             {typeof tour.price === 'number' && (
               <span className="text-[9px] text-gray-400 font-bold uppercase tracking-widest block leading-none mb-0.5">From</span>
             )}
-            {tour.originalPrice && (
-              <span className="text-gray-400 text-xs line-through block">${tour.originalPrice}</span>
-            )}
             <span className="text-brand-primary font-bold playfair text-xl">
               {typeof tour.price === 'number' ? `$${tour.price}` : tour.price}
               {typeof tour.price === 'number' && <span className="text-[10px] text-gray-400 font-sans font-medium uppercase tracking-wide"> /person*</span>}
@@ -60,6 +52,14 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
           <span className="flex items-center gap-1.5"><Clock size={12} className="text-brand-primary" aria-hidden="true" /> {tour.duration}</span>
           <span className="flex items-center gap-1.5"><Tag size={12} className="text-brand-primary" aria-hidden="true" /> Private Tour</span>
         </div>
+
+        {/* Verifiable trust signals, in place of the old discount badge. Every one
+            of these is true of every tour, and they outsell a permanent "% OFF". */}
+        <div className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-brand-success mb-3">
+          <ShieldCheck size={12} aria-hidden="true" />
+          <span>Licensed guide · Hotel pickup · Free cancellation</span>
+        </div>
+
         <p className="text-[10px] text-gray-400 leading-snug mb-5 pb-5 border-b border-brand-dark/5">
           {typeof tour.price === 'number'
             ? '*Entry fees & optional add-ons extra. Final quote shared before payment.'
@@ -73,8 +73,9 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
           >
             View Details <ArrowRight size={14} aria-hidden="true" />
           </Link>
-          
-            <a href={`https://wa.me/919217519989?text=${encodeURIComponent(`I'm interested in: ${tour.title}`)}`}
+
+          <a
+            href={`https://wa.me/919217519989?text=${encodeURIComponent(`I'm interested in: ${tour.title}`)}`}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Ask about ${tour.title} on WhatsApp`}
