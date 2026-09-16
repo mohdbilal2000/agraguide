@@ -36,7 +36,8 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Tours', path: '/plans' },
-    { name: 'Guides', path: '/guide-booking' },
+    { name: 'Hire a Guide', path: '/guide-booking' },
+    { name: 'Travel Guides', path: '/guides' },
     { name: 'Destinations', path: '/destinations' },
     { name: 'Reviews', path: '/reviews' },
     { name: 'FAQ', path: '/faq' },
