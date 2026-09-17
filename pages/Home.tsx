@@ -5,10 +5,11 @@ import TourCard from '../components/TourCard';
 import OptimizedImage from '../components/OptimizedImage';
 import SEO, { SITE_URL } from '../components/SEO';
 import { TOURS, REVIEWS, GUIDE_PACKAGES, DESTINATIONS, FAQS, PRICE_DISCLAIMER } from '../constants';
+import { GUIDES } from '../guides';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight, Check, Car, Utensils, Crown, ShieldCheck,
-  TrendingUp, Star, Users, MapPin, Quote, Sparkles, Plus
+  TrendingUp, Star, Users, MapPin, Quote, Sparkles, Plus, BookOpen
 } from 'lucide-react';
 
 const iconMap: Record<string, React.ElementType> = { Users, Car, Utensils, Crown };
@@ -315,7 +316,64 @@ const schema = [
       </section>
 
       {/* FAQ teaser */}
-      <section className="py-16 md:py-24 bg-white" aria-labelledby="faq-heading">
+      {/* Travel guides — linked individually from the home page on purpose.
+          The home page is crawled most often, so a direct link from here is the
+          strongest internal signal these pages can get. A link to /guides alone
+          leaves each guide one hop further away. */}
+      <section className="py-16 md:py-24 bg-white" aria-labelledby="guides-heading">
+        <div className="page-container">
+          <motion.div {...fadeUp} className="max-w-3xl mb-12">
+            <span className="text-brand-primary font-bold tracking-[0.3em] text-[10px] md:text-xs uppercase mb-3 block">Plan With Us</span>
+            <h2 id="guides-heading" className="display-lg font-bold playfair text-brand-dark mb-4">Travel Guides</h2>
+            <p className="text-gray-500 text-sm md:text-lg">
+              Written by guides who work these monuments every week — timings, gates, transport and
+              the details that decide how a day goes. Free to read, no booking needed.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {GUIDES.map((guide, i) => (
+              <motion.article
+                key={guide.slug}
+                {...fadeUp}
+                transition={{ duration: 0.6, delay: i * 0.06, ease: 'easeOut' }}
+                className="group bg-brand-bg rounded-[2rem] overflow-hidden border border-brand-dark/5 hover:shadow-lift transition-all duration-500 flex flex-col"
+              >
+                <Link to={`/guides/${guide.slug}`} className="block h-44 overflow-hidden">
+                  <OptimizedImage
+                    src={guide.image}
+                    alt={guide.cardTitle}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="h-full w-full group-hover:scale-105 transition-transform duration-700"
+                  />
+                </Link>
+                <div className="p-7 flex flex-col flex-grow">
+                  <h3 className="text-lg font-bold playfair text-brand-dark mb-2 leading-snug">
+                    <Link to={`/guides/${guide.slug}`} className="hover:text-brand-primary transition-colors">
+                      {guide.cardTitle}
+                    </Link>
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-5 flex-grow">{guide.cardSummary}</p>
+                  <Link
+                    to={`/guides/${guide.slug}`}
+                    className="inline-flex items-center gap-2 text-brand-primary font-bold text-[11px] uppercase tracking-widest"
+                  >
+                    Read guide <ArrowRight size={14} aria-hidden="true" />
+                  </Link>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+
+          <motion.div {...fadeUp} className="mt-12 text-center">
+            <Link to="/guides" className="inline-flex items-center gap-2 bg-brand-dark text-white px-8 py-4 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-brand-primary transition-all shadow-lg">
+              <BookOpen size={16} aria-hidden="true" /> All Travel Guides
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24 bg-brand-bg" aria-labelledby="faq-heading">
         <div className="page-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <motion.div {...fadeUp} className="lg:col-span-5">
