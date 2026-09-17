@@ -3,9 +3,10 @@ import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   CheckCircle2, Clock, MapPin,
-  Star, MessageCircle, ArrowLeft, Shield, Award, CalendarCheck
+  Star, MessageCircle, ArrowLeft, Shield, Award, CalendarCheck, BookOpen, ArrowRight
 } from 'lucide-react';
 import { TOURS, PRICE_DISCLAIMER } from '../constants';
+import { GUIDES } from '../guides';
 import OptimizedImage from '../components/OptimizedImage';
 import SEO, { SITE_URL } from '../components/SEO';
 
@@ -30,6 +31,13 @@ const PlanDetail: React.FC = () => {
   }
 
   const tourUrl = `${SITE_URL}/plans/${tour.id}`;
+
+  // Guides already name the tours they recommend. Reading that relationship
+  // backwards gives this page its reading list without a second mapping to
+  // maintain — add a guide, and the tours it mentions pick it up.
+  const relatedGuides = GUIDES.filter(g =>
+    g.related.some(r => r.to === `/plans/${tour.id}`)
+  );
 
   // An Offer without priceValidUntil is treated as stale after a while.
   // Rolls forward automatically to the end of the current year.
@@ -152,6 +160,34 @@ const PlanDetail: React.FC = () => {
                     </motion.li>
                   ))}
                 </ol>
+              </section>
+            )}
+
+            {relatedGuides.length > 0 && (
+              <section className="bg-white rounded-[2rem] p-8 md:p-14 shadow-soft border border-brand-dark/5" aria-labelledby="guides-heading">
+                <h2 id="guides-heading" className="text-3xl font-bold playfair mb-3">Before you go</h2>
+                <p className="text-gray-600 mb-8 leading-relaxed">
+                  Free to read, and useful whether or not you book with us.
+                </p>
+                <ul className="space-y-4">
+                  {relatedGuides.map(guide => (
+                    <li key={guide.slug}>
+                      <Link
+                        to={`/guides/${guide.slug}`}
+                        className="group flex items-start gap-4 p-5 bg-brand-bg rounded-2xl border border-brand-dark/5 hover:border-brand-primary/30 transition-all"
+                      >
+                        <BookOpen size={20} className="text-brand-primary shrink-0 mt-0.5" aria-hidden="true" />
+                        <span className="flex-grow">
+                          <span className="block font-bold text-brand-dark mb-1 group-hover:text-brand-primary transition-colors">
+                            {guide.cardTitle}
+                          </span>
+                          <span className="block text-sm text-gray-600 leading-relaxed">{guide.cardSummary}</span>
+                        </span>
+                        <ArrowRight size={16} className="text-brand-primary shrink-0 mt-1 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </section>
             )}
 
