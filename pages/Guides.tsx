@@ -14,9 +14,9 @@ const Guides: React.FC = () => {
     {
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
-      name: 'Taj Mahal & Agra Travel Guides',
+      name: 'Taj Mahal, Agra & Delhi Travel Guides',
       description:
-        'Practical, regularly updated guides to visiting the Taj Mahal and Agra — timings, tickets, transport from Delhi and what to do when the monument is closed.',
+        'Practical, regularly updated guides to the Taj Mahal, Agra and Delhi — timings, gates, transport, safety and getting around.',
       url: `${SITE_URL}/guides`,
       hasPart: GUIDES.map(g => ({
         '@type': 'Article',
@@ -38,8 +38,8 @@ const Guides: React.FC = () => {
   return (
     <div className="bg-brand-bg min-h-screen pt-32 pb-24">
       <SEO
-        title="Taj Mahal & Agra Travel Guides"
-        description="Straight answers about visiting the Taj Mahal — sunrise timings month by month, getting there from Delhi, and what to do on Fridays when it is closed."
+        title="Taj Mahal, Agra &amp; Delhi Travel Guides"
+        description="Straight answers about the Taj Mahal, Agra and Delhi — sunrise timings month by month, getting between the two cities, Friday closures, safety and getting around Delhi."
         canonical="/guides"
         schema={schema}
       />
@@ -52,12 +52,12 @@ const Guides: React.FC = () => {
         </nav>
 
         <h1 className="display-lg font-bold playfair text-brand-dark mb-6 max-w-4xl">
-          Taj Mahal &amp; Agra travel guides
+          Taj Mahal, Agra &amp; Delhi travel guides
         </h1>
         <p className="text-lg md:text-xl text-gray-600 max-w-3xl leading-relaxed mb-16">
-          Written by guides who work at these monuments every week — the timings, the gates, the
-          trains and the small details that decide whether a day in Agra goes smoothly. No booking
-          required to read any of it.
+          Written by guides who work these monuments and streets every week — the timings, the gates,
+          the trains, and the practical details that decide how a day goes. Agra and Delhi both, and no
+          booking required to read any of it.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
