@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Hero from '../components/Hero';
 import TourCard from '../components/TourCard';
@@ -9,7 +9,7 @@ import { GUIDES } from '../guides';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight, Check, Car, Utensils, Crown, ShieldCheck,
-  TrendingUp, Star, Users, MapPin, Quote, Sparkles, Plus, BookOpen
+  TrendingUp, Star, Users, MapPin, Quote, Sparkles, Plus, Minus, BookOpen
 } from 'lucide-react';
 
 const iconMap: Record<string, React.ElementType> = { Users, Car, Utensils, Crown };
@@ -22,6 +22,11 @@ const fadeUp = {
 };
 
 const Home: React.FC = () => {
+  // The full list lives at /faq. Six here keeps the home page readable, and the
+  // schema below is built from this same slice so markup matches what is shown.
+  const homeFaqs = FAQS.slice(0, 6);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
   const featuredTours = [...TOURS]
     .sort((a, b) => (b.isMostBooked ? 1 : 0) - (a.isMostBooked ? 1 : 0) || b.reviewsCount - a.reviewsCount)
     .slice(0, 6);
@@ -60,7 +65,7 @@ const schema = [
   {
     "@type": "FAQPage",
     "@id": `${SITE_URL}/#faq`,
-    "mainEntity": FAQS.map(faq => ({
+    "mainEntity": homeFaqs.map(faq => ({
       "@type": "Question",
       "name": faq.question,
       "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
@@ -384,20 +389,44 @@ const schema = [
                 All FAQs <ArrowRight size={16} aria-hidden="true" />
               </Link>
             </motion.div>
-            <div className="lg:col-span-7 space-y-4">
-              {FAQS.map((faq, i) => (
-                <motion.div
-                  key={i}
-                  {...fadeUp}
-                  transition={{ duration: 0.6, delay: i * 0.08, ease: 'easeOut' }}
-                  className="bg-brand-bg rounded-2xl p-6 border border-brand-dark/5"
-                >
-                  <h3 className="font-bold text-brand-dark mb-2 flex items-start gap-3">
-                    <Plus size={18} className="text-brand-primary shrink-0 mt-0.5" aria-hidden="true" /> {faq.question}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed pl-8">{faq.answer}</p>
-                </motion.div>
-              ))}
+            <div className="lg:col-span-7 space-y-3">
+              {homeFaqs.map((faq, i) => {
+                const isOpen = openFaq === i;
+                return (
+                  <motion.div
+                    key={i}
+                    {...fadeUp}
+                    transition={{ duration: 0.6, delay: i * 0.06, ease: 'easeOut' }}
+                    className="bg-white rounded-2xl border border-brand-dark/5 overflow-hidden"
+                  >
+                    <h3>
+                      <button
+                        onClick={() => setOpenFaq(isOpen ? null : i)}
+                        aria-expanded={isOpen}
+                        aria-controls={`home-faq-${i}`}
+                        className="w-full flex items-start justify-between gap-4 p-5 md:p-6 text-left hover:bg-brand-bg/60 transition-colors"
+                      >
+                        <span className="font-bold text-brand-dark text-sm md:text-base">{faq.question}</span>
+                        {isOpen
+                          ? <Minus size={18} className="text-brand-primary shrink-0 mt-0.5" aria-hidden="true" />
+                          : <Plus size={18} className="text-brand-primary shrink-0 mt-0.5" aria-hidden="true" />}
+                      </button>
+                    </h3>
+                    {/* Collapsed with height rather than unmounted: the answer stays in
+                        the HTML, so search and AI crawlers read it without clicking. */}
+                    <motion.div
+                      id={`home-faq-${i}`}
+                      initial={false}
+                      animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      className="overflow-hidden"
+                      aria-hidden={!isOpen}
+                    >
+                      <p className="px-5 md:px-6 pb-6 text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
+                    </motion.div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
