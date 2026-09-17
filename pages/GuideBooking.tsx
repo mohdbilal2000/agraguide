@@ -22,12 +22,12 @@ const steps = [
 const cities = [
   { name: 'Agra', img: '/taj-mahal-reflection.webp' },
   { name: 'Delhi', img: '/red-fort-delhi.webp' },
-  { name: 'Jaipur', img: '/india-gate-group.webp' },
-  { name: 'Mathura', img: '/ranthambore-tiger.webp' },
+  { name: 'Jaipur', img: '/rajasthan-palace-hotel.webp' },
+  { name: 'Sawai Madhopur', img: '/ranthambore-tiger.webp' },
 ];
 
 const times = [
-  { label: 'Sunrise (05:30 AM)', note: 'Best for photography' },
+  { label: 'Sunrise', note: 'Timed to your travel month — best light, fewest people' },
   { label: 'Morning (09:00 AM)', note: 'Avoid mid-day heat' },
   { label: 'Afternoon (01:00 PM)', note: 'Historical focus' },
   { label: 'Full Day (Intensive)', note: 'Most complete' },
