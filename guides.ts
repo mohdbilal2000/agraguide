@@ -373,5 +373,257 @@ export const GUIDES: Guide[] = [
       { label: 'Taj Mahal at sunrise: timing and gates', to: '/guides/taj-mahal-sunrise' },
       { label: 'Delhi to Agra: every way to get there', to: '/guides/delhi-to-agra' }
     ]
+  },
+
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'is-delhi-safe-for-tourists',
+    metaTitle: 'Is Delhi Safe for Tourists? An Honest Answer from Local Guides',
+    metaDescription:
+      'Delhi is safe for most visitors who take ordinary precautions — but the honest answer has detail in it. What actually goes wrong, what does not, and what solo women should know.',
+    h1: 'Is Delhi Safe for Tourists?',
+    cardTitle: 'Is Delhi Safe for Tourists?',
+    cardSummary:
+      'The honest version — what actually goes wrong in Delhi, what is exaggerated, and what solo female travellers should plan for.',
+    image: '/india-gate-group.webp',
+    updated: '2026-09-17',
+    intro: [
+      'Mostly, yes. Millions of foreign visitors come through Delhi every year and the overwhelming majority have an ordinary, uneventful trip. The real risks are not the ones most people worry about — violent crime against tourists is rare. What is common is being overcharged, misdirected, or steered towards a shop that pays commission.',
+      'That said, "it is safe" is a lazy answer, and so is "it is dangerous". Below is what actually tends to go wrong, what solo women should plan for, and what we do differently on our own tours. We run these streets every week, and we would rather you arrive prepared than reassured.'
+    ],
+    sections: [
+      {
+        heading: 'What actually goes wrong',
+        id: 'what-goes-wrong',
+        body: [
+          'Almost every bad story that comes out of Delhi is a commercial one, not a violent one. It follows a pattern, and the pattern is worth knowing because it is easy to spot once you have seen it written down.'
+        ],
+        list: [
+          'The taxi that says your hotel is "closed", "burnt down" or "full", and offers to take you to a better one — where he earns a commission',
+          'The helpful stranger outside a monument who says the entrance is elsewhere, and walks you towards a travel agency',
+          'The auto-rickshaw that will not use the meter, then quotes four times the fare at the end of the ride',
+          'The "government tourist office" near Connaught Place that is nothing of the sort',
+          'The shopping stop your driver insists on, where prices are doubled and he takes a cut'
+        ],
+        callout: {
+          title: 'The one rule that prevents most of it',
+          text: 'Never let a stranger redirect a plan you already made. If someone tells you your hotel is closed, your monument is shut, or your route has changed, assume it is untrue until you have checked it yourself. Every version of this scam depends on you changing your plan on someone else\'s word.'
+        }
+      },
+      {
+        heading: 'Solo female travellers',
+        id: 'solo-women',
+        body: [
+          'This deserves a straight answer rather than a reassuring one. Delhi has a poor reputation on women\'s safety, and it is not entirely undeserved — staring is common, and crowded public transport can be uncomfortable. Most solo women who visit have no serious problem, but "most" is doing real work in that sentence and it would be dishonest to pretend otherwise.',
+          'What changes the experience is structure: knowing where you are going, having transport you did not arrange on the street, and not being alone in unfamiliar areas after dark. None of that requires being fearful. It requires planning the parts that are easy to plan.'
+        ],
+        list: [
+          'The Delhi Metro has a women-only carriage at the front of every train — it is well used and worth using at busy hours',
+          'Use a booked cab (app or hotel) rather than flagging one down, particularly at night',
+          'Dress is not about rules — shoulders and knees covered simply attracts less attention, which is the practical point',
+          'Trust the instinct to leave a situation. You owe no one a polite exit',
+          'Share your day\'s plan with someone — a hotel, a friend at home, or your guide'
+        ]
+      },
+      {
+        heading: 'Areas, and times of day',
+        id: 'areas',
+        body: [
+          'Delhi is not one place. Central Delhi around India Gate, Lodhi Road and Khan Market is calm and green. Old Delhi around Chandni Chowk is dense, loud and completely absorbing — and entirely fine in daylight, though it is easy to get lost and hard to move quickly.',
+          'Paharganj, the backpacker area near New Delhi railway station, is where most touts operate. It is not dangerous so much as relentless. If your hotel is there, that is fine, but expect to be approached constantly.',
+          'After dark, the calculation changes in the way it does in any large city: stay in well-lit, busy areas, and take a booked cab rather than walking unfamiliar routes. Delhi at night is not a no-go zone — Connaught Place, Khan Market and Hauz Khas are busy and normal well into the evening.'
+        ]
+      },
+      {
+        heading: 'Food and water',
+        id: 'food-water',
+        body: [
+          'The stomach is the thing most likely to interrupt your trip, not crime. Tap water is not drinkable — use sealed bottles, and check the seal. Ice in smaller places is worth avoiding.',
+          'Street food is not the enemy. A busy stall with high turnover, cooking in front of you, is usually safer than a quiet restaurant with a fridge you cannot see. The rule is freshly cooked and hot, eaten where locals are eating.',
+          'If your stomach is unaccustomed to Indian food, give it a couple of days before the ambitious eating. Carry oral rehydration salts; they are cheap at any pharmacy and make a bad day considerably shorter.'
+        ]
+      },
+      {
+        heading: 'Air quality — the real seasonal risk',
+        id: 'air-quality',
+        body: [
+          'This is the health issue most visitors underestimate, and unlike everything else on this page it is seasonal and measurable. Delhi\'s air is at its worst from late October through January, when crop burning, cooler air and winter smog combine. Readings during that period are regularly in the unhealthy range.',
+          'For most healthy adults on a short visit it means irritated eyes and a cough. For anyone with asthma or a respiratory condition, or travelling with young children or elderly parents, it is worth taking seriously — check the current AQI before you travel, carry an N95 mask, and plan indoor mornings on the worst days.',
+          'February to April and September to early October are considerably better, and pleasant to walk in.'
+        ]
+      },
+      {
+        heading: 'What we do about it',
+        id: 'how-we-work',
+        body: [
+          'Most of the risks above come from the gaps — the walk from the station, the taxi you did not arrange, the stranger at the gate. A guided day removes the gaps rather than the city.',
+          'On our tours you are with a Ministry of Tourism licensed guide and a driver we work with regularly, for the whole day. Pickup and drop are at your hotel door, not a public meeting point. You have a direct WhatsApp line to us throughout, and female guides can be requested at booking with no extra charge.',
+          'We do not run commission shopping stops. If you want to shop, tell us and we will take you somewhere good — but it will not appear in your itinerary uninvited.',
+          'If you would like your itinerary, vehicle number and guide details shared with someone at home before the tour, ask. We do this often and think more people should.'
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: 'Is Delhi safe for solo female travellers?',
+        answer:
+          'For most visitors, yes, with ordinary precautions — booked transport rather than street-hailed, the women-only Metro carriage at busy hours, and avoiding unfamiliar areas alone after dark. Staring is common and can be wearing; serious incidents involving foreign visitors are rare. Travelling with a guide removes most of the situations where problems start.'
+      },
+      {
+        question: 'Is it safe to eat street food in Delhi?',
+        answer:
+          'Generally yes, if you choose well. Busy stalls with fast turnover, cooked fresh in front of you, are the safest bet. Avoid anything sitting out, raw salads washed in tap water, and ice in smaller places. Drink only sealed bottled water.'
+      },
+      {
+        question: 'What is the most common scam in Delhi?',
+        answer:
+          'Being told your hotel is closed, full or burnt down, and being taken to a different one that pays commission. The variants all work the same way — a stranger changes a plan you already had. Verify anything like this yourself before acting on it.'
+      },
+      {
+        question: 'When is Delhi air pollution at its worst?',
+        answer:
+          'Late October through January, with November usually the worst month. If you have a respiratory condition or are travelling with children or older parents, check the AQI before booking those dates and carry an N95 mask.'
+      },
+      {
+        question: 'Is the Delhi Metro safe for tourists?',
+        answer:
+          'Yes. It is clean, cheap, air-conditioned and heavily used by locals and visitors alike, with security screening at every station. The front carriage of each train is reserved for women. It is crowded at rush hour, which is a comfort issue rather than a safety one.'
+      }
+    ],
+    related: [
+      {
+        label: 'Delhi Photography Tour',
+        to: '/plans/delhi-photography-tour',
+        note: 'A full day across Old and New Delhi with a licensed guide — the simplest way to see the city without arranging anything on the street.'
+      },
+      {
+        label: 'Hire a Licensed Guide',
+        to: '/guide-booking',
+        note: 'Guide only, if you have your own transport and just want someone who knows the city with you.'
+      }
+    ],
+    seeAlso: [
+      { label: 'Getting around Delhi: metro, taxi or car', to: '/guides/getting-around-delhi' },
+      { label: 'Delhi to Agra: every way to get there', to: '/guides/delhi-to-agra' }
+    ]
+  },
+
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'getting-around-delhi',
+    metaTitle: 'Getting Around Delhi: Metro, Taxi, Auto or Private Car',
+    metaDescription:
+      'Delhi is large and the right transport changes by time of day. Metro, app cabs, autos and private cars compared — costs, when each works, and what to avoid.',
+    h1: 'Getting Around Delhi: Metro, Taxi, Auto or Car',
+    cardTitle: 'Getting Around Delhi',
+    cardSummary:
+      'The Metro is excellent and the traffic is not. When to use which, what things cost, and the mistakes that cost visitors time.',
+    image: '/red-fort-delhi.webp',
+    updated: '2026-09-17',
+    intro: [
+      'Delhi covers roughly 1,500 square kilometres, and the distance between two things you want to see is usually further than it looks on a map. Getting this right is the difference between seeing four monuments in a day and seeing two.',
+      'The short version: the Metro is genuinely excellent and beats road transport at rush hour; app cabs are cheap and remove all negotiation; autos are useful for short hops if you agree the fare first; and a private car earns its cost on a day with several stops or in the heat.'
+    ],
+    sections: [
+      {
+        heading: 'The options, compared',
+        id: 'compare',
+        table: {
+          caption: 'Delhi transport at a glance',
+          headers: ['Option', 'Cost', 'Best for', 'Watch out for'],
+          rows: [
+            ['Metro', 'Very low', 'Rush hour, long distances, airport run', 'Crowds 8–10am and 5–8pm; not every monument is near a station'],
+            ['App cab (Uber / Ola)', 'Low', 'Door to door, at night, with luggage', 'Surge pricing; drivers cancelling short trips'],
+            ['Auto-rickshaw', 'Low', 'Short hops, last mile from a Metro station', 'Meters often refused — agree the fare before you sit'],
+            ['Private car with driver', 'Higher', 'Full sightseeing days, families, summer heat', 'Unsolicited shopping stops with commission operators'],
+            ['Walking', 'Free', 'Old Delhi lanes, Lodhi Garden, Khan Market', 'Distances between areas are much longer than they look']
+          ]
+        }
+      },
+      {
+        heading: 'The Metro',
+        id: 'metro',
+        body: [
+          'Delhi\'s Metro is one of the best in Asia — clean, air-conditioned, cheap and fast. Trains run roughly from early morning until about 11pm, and every station has security screening on entry, which takes a minute or two.',
+          'Pay with a travel card or a QR ticket bought at the station or in the DMRC app. A card is worth it if you plan more than a couple of journeys.',
+          'The Airport Express Line connects Terminal 3 with New Delhi railway station in about twenty minutes. At rush hour it comfortably beats a taxi, which can take an hour or more for the same journey.',
+          'The front carriage of every train is reserved for women. Bulky luggage is allowed on the Airport Express but awkward on the regular lines during peak hours.'
+        ],
+        callout: {
+          title: 'Where the Metro stops being the answer',
+          text: 'Several of the places you have come to see — Humayun\'s Tomb, Lodhi Garden, parts of Old Delhi — are a further ten to twenty minutes from the nearest station. The Metro gets you across the city; something else gets you the last kilometre. Plan for both rather than assuming one covers the day.'
+        }
+      },
+      {
+        heading: 'App cabs and autos',
+        id: 'cabs-autos',
+        body: [
+          'Uber and Ola both work across Delhi and are inexpensive by international standards. The advantage is not only price — it is that the fare is fixed in advance and there is nothing to negotiate. Both also offer auto-rickshaws in the app, which solves the meter problem entirely.',
+          'Flagged-down autos are still useful for short distances. The meter is frequently refused; agree a price before getting in, and expect to be quoted high initially. A short hop across a neighbourhood should be modest — if the number sounds like a taxi fare, it is one.',
+          'At the airport, use the official prepaid taxi counter or an app pickup from the designated zone. Do not accept an offer from someone approaching you in the arrivals hall.'
+        ]
+      },
+      {
+        heading: 'Private car with driver',
+        id: 'private-car',
+        body: [
+          'For a sightseeing day this is usually the right answer, and not mainly for comfort. Delhi\'s monuments are spread across the city; with a car the vehicle waits while you go in, your bags stay with you, and you are not renegotiating transport five times a day in 40-degree heat.',
+          'It matters more with children, with elderly parents, in May and June, and on any day where you want to see more than three places.',
+          'One thing to settle before you start: shopping stops. Many drivers earn commission from emporiums and will build them into your day. A reputable operator does not. Say at the start that you do not want unplanned stops — and if you do want to shop, say that too, so it is on your terms.'
+        ]
+      },
+      {
+        heading: 'Traffic, and how to plan around it',
+        id: 'traffic',
+        body: [
+          'Delhi traffic is heaviest roughly 8–10am and 5–8pm on weekdays. In those windows a journey can take three times as long as the map suggests, and the Metro will usually win outright.',
+          'Old Delhi is its own case. Around Chandni Chowk, vehicles barely move and the lanes are too narrow for cars anyway. Arrive by Metro or drop at the edge and walk in — a cycle-rickshaw through the bazaar is slow, but it is also one of the better twenty minutes of a Delhi trip.',
+          'Sunday morning is the quietest the city gets. If your itinerary has one day with a lot of ground to cover, make it that one.'
+        ],
+        list: [
+          'Allow 45–60 minutes between areas during peak hours, not the 20 minutes the map shows',
+          'Group sights by area rather than by interest — Old Delhi together, central Delhi together, south Delhi together',
+          'Monument entry closes well before sunset; the last hour of the day is better spent somewhere open in the evening'
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: 'Is the Delhi Metro good for tourists?',
+        answer:
+          'Yes — it is cheap, air-conditioned, clean and far faster than road transport at rush hour. Buy a travel card or a QR ticket at the station. Bear in mind that several major monuments sit some distance from the nearest station, so you will often still need an auto or cab for the last stretch.'
+      },
+      {
+        question: 'How do I get from Delhi airport to the city?',
+        answer:
+          'The Airport Express Metro reaches New Delhi station from Terminal 3 in about twenty minutes and is the fastest option at busy times. Otherwise use the official prepaid taxi counter or book an app cab from the designated pickup zone. Do not accept rides offered by people approaching you inside arrivals.'
+      },
+      {
+        question: 'Should I use Uber or an auto-rickshaw in Delhi?',
+        answer:
+          'Uber and Ola remove the negotiation and fix the fare in advance, which makes them the simpler choice for most visitors. Autos are good for short hops and are cheaper — just agree the fare before getting in, since meters are frequently refused. Both apps also let you book an auto with a fixed fare.'
+      },
+      {
+        question: 'Do I need a private car for a day of sightseeing in Delhi?',
+        answer:
+          'Not strictly, but it saves a great deal of time if you plan to see more than three places, and it matters in the summer heat or with children or older parents. The vehicle waits at each stop and your luggage stays with you, which the Metro and cabs cannot offer.'
+      }
+    ],
+    related: [
+      {
+        label: 'Delhi Photography Tour',
+        to: '/plans/delhi-photography-tour',
+        note: 'Private vehicle and a licensed guide for the day, timed around the light and the traffic rather than against them.'
+      },
+      {
+        label: 'Same Day Taj Mahal Tour by Car',
+        to: '/plans/same-day-taj-car',
+        note: 'If Agra is on the plan — door to door from your Delhi hotel, with tolls and parking included.'
+      }
+    ],
+    seeAlso: [
+      { label: 'Is Delhi safe for tourists?', to: '/guides/is-delhi-safe-for-tourists' },
+      { label: 'Delhi to Agra: every way to get there', to: '/guides/delhi-to-agra' }
+    ]
   }
 ];
