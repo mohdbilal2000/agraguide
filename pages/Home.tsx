@@ -301,12 +301,17 @@ const schema = [
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
-            {REVIEWS.slice(0, 4).map((review, i) => (
+            {REVIEWS.map((review, i) => (
               <motion.figure
                 key={review.id}
                 {...fadeUp}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: 'easeOut' }}
-                className="bg-white/5 border border-white/10 rounded-[2rem] p-8 backdrop-blur-sm"
+                /* An odd final card would sit alone in the left column — centre it instead. */
+                className={`bg-white/5 border border-white/10 rounded-[2rem] p-8 backdrop-blur-sm${
+                  i === REVIEWS.length - 1 && REVIEWS.length % 2 === 1
+                    ? ' md:col-span-2 md:w-[calc(50%-1rem)] md:mx-auto'
+                    : ''
+                }`}
               >
                 <Quote size={28} className="text-brand-gold mb-4" aria-hidden="true" />
                 <blockquote className="text-white/85 leading-relaxed mb-6">{review.text}</blockquote>
