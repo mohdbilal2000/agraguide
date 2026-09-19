@@ -554,15 +554,19 @@ export const TRIPADVISOR_REVIEW_COUNT = 5;
 export const TRIPADVISOR_LISTING_URL =
   'https://www.tripadvisor.com/Attraction_Review-g304551-d34462482-Reviews-Indiventure_Travellers-New_Delhi_National_Capital_Territory_of_Delhi.html';
 
+export const VIATOR_LISTING_URL =
+  'https://www.viator.com/tours/New-Delhi/Delhi-Unveiled-Private-Full-Day-Heritage-and-Cultural-Experience/d804-5671644P2';
+
 /**
- * Booking platforms we are actually listed on, shown in the homepage trust band.
- * Add a platform here only once a live listing exists — an unlinked logo implies
- * a partnership that a traveller cannot verify.
- * TODO: add the Viator listing URL so the entry can link out like Tripadvisor.
+ * Platforms we are listed on but deliberately quote no rating for. Viator is
+ * owned by Tripadvisor and shares its review pool, so showing both counts would
+ * present the same reviews twice.
+ *
+ * Every entry needs a public listing URL — a name a traveller cannot open is the
+ * unverifiable logo wall this replaced.
  */
-export const PLATFORM_LISTINGS: { name: string; url?: string }[] = [
-  { name: 'Tripadvisor', url: TRIPADVISOR_LISTING_URL },
-  { name: 'Viator' }
+export const ADDITIONAL_LISTINGS: { name: string; url: string }[] = [
+  { name: 'Viator', url: VIATOR_LISTING_URL }
 ];
 
 /**

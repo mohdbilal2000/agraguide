@@ -8,7 +8,7 @@ import {
   TOURS, REVIEWS, GUIDE_PACKAGES, DESTINATIONS, FAQS, PRICE_DISCLAIMER,
   GOOGLE_RATING, GOOGLE_REVIEW_COUNT, GOOGLE_LISTING_URL,
   TRIPADVISOR_RATING, TRIPADVISOR_REVIEW_COUNT, TRIPADVISOR_LISTING_URL,
-  PLATFORM_LISTINGS
+  ADDITIONAL_LISTINGS
 } from '../constants';
 import { GUIDES } from '../guides';
 import { Link } from 'react-router-dom';
@@ -126,10 +126,22 @@ const schema = [
                   </span>
                 </a>
               ))}
-              {PLATFORM_LISTINGS.some(p => !p.url) && (
+              {ADDITIONAL_LISTINGS.length > 0 && (
                 <p className="text-white/40 text-[10px] uppercase tracking-[0.2em] font-bold">
                   Also listed on{' '}
-                  {PLATFORM_LISTINGS.filter(p => !p.url).map(p => p.name).join(', ')}
+                  {ADDITIONAL_LISTINGS.map((p, idx) => (
+                    <React.Fragment key={p.name}>
+                      {idx > 0 && ', '}
+                      <a
+                        href={p.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline underline-offset-4 hover:text-brand-gold transition-colors"
+                      >
+                        {p.name}
+                      </a>
+                    </React.Fragment>
+                  ))}
                 </p>
               )}
             </div>
