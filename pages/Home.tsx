@@ -94,7 +94,7 @@ const schema = [
               </div>
               <div>
                 <p className="text-3xl md:text-4xl font-bold text-white playfair">1,786</p>
-                <p className="text-brand-gold font-bold text-[10px] uppercase tracking-[0.2em] mt-1">Tours Booked Last Month</p>
+                <p className="text-brand-gold font-bold text-[10px] uppercase tracking-[0.2em] mt-1">Tours Booked Last Year</p>
               </div>
             </div>
             <div className="relative flex-grow w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
