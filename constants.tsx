@@ -535,22 +535,64 @@ export const BLOG_POSTS: BlogPost[] = [
   }
 ];
 
+/**
+ * Live figures from the Google Business Profile — the single source of truth for
+ * every rating claim on the site. Re-check these whenever REVIEWS is synced, and
+ * never state a number here that the public listing does not show.
+ * Listing: https://g.page/r/CS9HSF8iHKJeEBM
+ */
+export const GOOGLE_RATING = '4.9';
+export const GOOGLE_REVIEW_COUNT = 8;
+export const GOOGLE_LISTING_URL = 'https://g.page/r/CS9HSF8iHKJeEBM';
+
+/**
+ * Verified Google reviews, transcribed verbatim from the public listing
+ * (spelling left as written by the reviewer). Last synced September 2026.
+ *
+ * These are a selection — the listing carries GOOGLE_REVIEW_COUNT reviews in
+ * total, so the site shows the real Google average rather than one computed
+ * from the subset below.
+ */
 export const REVIEWS: Review[] = [
   {
     id: 'r1',
-    author: 'Sarah Jenkins',
-    location: 'United Kingdom',
+    author: 'Deepak Binwal',
     rating: 5,
-    text: 'An absolute dream! Our guide Hemant knew exactly when to get us to the Taj for the best photos without the crowds. Highly recommended for anyone wanting a stress-free Agra experience.',
-    date: '2026-05-12'
+    text: 'Our Golden Triangle tour with IndiVentureTravellers was truly special. Hemant made us feel like we were exploring India with a friend, not just a guide. His stories of Delhi, the Taj Mahal, and Jaipur made every place come alive. We loved the personal attention and the little cultural experiences along the way. Thank you, Hemant, for making our first journey through India so memorable. We would happily recommend IndiVentureTravellers to our friends and family!',
+    date: '2026-09',
+    source: 'Google'
   },
   {
     id: 'r2',
-    author: 'Marco Rossi',
-    location: 'Italy',
+    author: 'Keven Jhon',
     rating: 5,
-    text: 'The logistics were perfect. Coming from Delhi by train was easy and efficient. The heritage walk in Agra Fort was the highlight of our trip.',
-    date: '2026-05-10'
+    text: 'We had an amazing experience traveling with IndiVenturetravellers during our visit to India. From the moment we arrived, everything was organized perfectly. Our guide was friendly, knowledgeable, and spoke excellent English.',
+    date: '2026-07',
+    source: 'Google'
+  },
+  {
+    id: 'r3',
+    author: 'Tereza Housková',
+    rating: 5,
+    text: 'The best traveling with guide Himen. He knows what he dnes and can take wonderful pictures as well. Thank You for everything',
+    date: '2026-07',
+    source: 'Google'
+  },
+  {
+    id: 'r4',
+    author: 'Mohd Hilal',
+    rating: 5,
+    text: 'Really had awesome experience guide was very knowledgeable and very cooperative',
+    date: '2026-07',
+    source: 'Google'
+  },
+  {
+    id: 'r5',
+    author: 'Maria Vhernie Vizcarra',
+    rating: 4,
+    text: 'Great tour',
+    date: '2026-08',
+    source: 'Google'
   }
 ];
 

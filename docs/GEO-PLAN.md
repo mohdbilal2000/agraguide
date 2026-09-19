@@ -15,7 +15,7 @@
 
 1. **`public/llms.txt`** — structured plain-text brief for AI crawlers: who we are, services, prices, locations, policies, contact, and key URLs. The emerging convention generative engines and agent browsers check.
 2. **Static structured data in `index.html`** — full `TravelAgency` JSON-LD (name, geo, hours, rating, phone) served without JS, so non-rendering AI crawlers ingest the entity correctly.
-3. **Citable fact density:** homepage and tour pages now carry concrete, quotable facts — "tours from $40", "1,786 bookings last month", "since 1998", "government-licensed guides", durations, pickup details — the units LLMs lift into answers.
+3. **Citable fact density:** homepage and tour pages now carry concrete, quotable facts — "tours from $40", "1,786 bookings last year", "since 2015", "government-licensed guides", durations, pickup details — the units LLMs lift into answers. Every such fact must be independently verifiable; ratings come from GOOGLE_RATING / GOOGLE_REVIEW_COUNT in constants.tsx so a single edit keeps the whole site consistent with the live listing.
 4. **Entity consistency (NAP):** identical name / address / phone across schema, footer, contact surfaces, and llms.txt.
 5. **Clean information architecture:** every tour is a stable, crawlable URL listed in `sitemap.xml` with self-describing title + description + Product schema.
 6. **robots.txt welcomes AI crawlers** (GPTBot, ClaudeBot, PerplexityBot, Google-Extended explicitly allowed) — deliberate policy choice: visibility over exclusion.

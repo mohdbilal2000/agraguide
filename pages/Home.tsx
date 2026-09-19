@@ -4,7 +4,10 @@ import Hero from '../components/Hero';
 import TourCard from '../components/TourCard';
 import OptimizedImage from '../components/OptimizedImage';
 import SEO, { SITE_URL } from '../components/SEO';
-import { TOURS, REVIEWS, GUIDE_PACKAGES, DESTINATIONS, FAQS, PRICE_DISCLAIMER } from '../constants';
+import {
+  TOURS, REVIEWS, GUIDE_PACKAGES, DESTINATIONS, FAQS, PRICE_DISCLAIMER,
+  GOOGLE_RATING, GOOGLE_REVIEW_COUNT, GOOGLE_LISTING_URL
+} from '../constants';
 import { GUIDES } from '../guides';
 import { Link } from 'react-router-dom';
 import {
@@ -284,11 +287,21 @@ const schema = [
         <div className="page-container relative z-10">
           <motion.div {...fadeUp} className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
             <span className="text-brand-gold font-bold tracking-[0.3em] text-[10px] md:text-xs uppercase mb-3 block">Guest Stories</span>
-            <h2 id="reviews-heading" className="display-lg font-bold playfair text-white mb-4">Rated 5.0/5 on Google</h2>
+            <h2 id="reviews-heading" className="display-lg font-bold playfair text-white mb-4">
+              Rated {GOOGLE_RATING}/5 on Google
+            </h2>
+            <a
+              href={GOOGLE_LISTING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/60 text-sm hover:text-brand-gold transition-colors underline underline-offset-4"
+            >
+              Read all {GOOGLE_REVIEW_COUNT} reviews on our Google listing
+            </a>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
-            {REVIEWS.map((review, i) => (
+            {REVIEWS.slice(0, 4).map((review, i) => (
               <motion.figure
                 key={review.id}
                 {...fadeUp}
@@ -300,7 +313,9 @@ const schema = [
                 <figcaption className="flex items-center justify-between">
                   <div>
                     <p className="font-bold text-white">{review.author}</p>
-                    <p className="text-white/50 text-xs uppercase tracking-widest">{review.location}</p>
+                    <p className="text-white/50 text-xs uppercase tracking-widest">
+                      {review.location ?? `Verified ${review.source ?? ''} review`.trim()}
+                    </p>
                   </div>
                   <div className="flex text-brand-gold" aria-label={`${review.rating} out of 5 stars`}>
                     {[...Array(review.rating)].map((_, s) => (

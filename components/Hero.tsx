@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Star, ArrowRight, ShieldCheck, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '../constants';
 
 const slides = [
   {
@@ -61,7 +62,9 @@ const Hero: React.FC = () => {
           >
             <div className="inline-flex items-center gap-2 bg-brand-gold text-brand-dark px-4 py-1.5 rounded-full mb-6 shadow-xl">
               <Star size={12} fill="currentColor" aria-hidden="true" />
-              <span className="text-[10px] font-bold uppercase tracking-widest">Rated 5.0/5 on Google</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest">
+                Rated {GOOGLE_RATING}/5 on Google · {GOOGLE_REVIEW_COUNT} reviews
+              </span>
             </div>
 
             <AnimatePresence mode="wait">

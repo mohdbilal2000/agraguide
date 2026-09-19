@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { REVIEWS } from '../constants';
+import { REVIEWS, GOOGLE_RATING, GOOGLE_REVIEW_COUNT, GOOGLE_LISTING_URL } from '../constants';
 import { Star, Quote, MessageSquare, ShieldCheck, BadgeCheck, Languages } from 'lucide-react';
 import SEO from '../components/SEO';
 
@@ -19,10 +19,9 @@ const initials = (name: string) =>
     .slice(0, 2)
     .toUpperCase();
 
-const average =
-  REVIEWS.length > 0
-    ? (REVIEWS.reduce((sum, r) => sum + r.rating, 0) / REVIEWS.length).toFixed(1)
-    : '0.0';
+/* The rating shown is Google's own average across every review on the listing,
+   not one computed from the selection displayed below — computing it here would
+   contradict the number travellers see when they click through to Google. */
 
 const Reviews: React.FC = () => {
   return (
@@ -43,8 +42,16 @@ const Reviews: React.FC = () => {
             Real feedback from travellers who have experienced the soul of India with us.
           </p>
           <p className="mt-6 text-sm font-bold uppercase tracking-widest text-brand-primary">
-            {average} average · {REVIEWS.length} {REVIEWS.length === 1 ? 'review' : 'reviews'}
+            {GOOGLE_RATING} average · {GOOGLE_REVIEW_COUNT} Google reviews
           </p>
+          <a
+            href={GOOGLE_LISTING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-block text-sm text-gray-500 hover:text-brand-primary transition-colors underline underline-offset-4"
+          >
+            Verify every review on our Google listing
+          </a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -84,7 +91,7 @@ const Reviews: React.FC = () => {
                     {review.author}
                   </p>
                   <p className="text-xs text-gray-400 font-bold uppercase group-hover:text-white/60 transition-colors">
-                    {review.location}
+                    {review.location ?? `Verified ${review.source ?? ''} review`.trim()}
                   </p>
                 </div>
               </figcaption>

@@ -37,10 +37,14 @@ export interface Destination {
 export interface Review {
   id: string;
   author: string;
-  location: string;
+  /** Google does not publish reviewer location, so this is omitted rather than guessed. */
+  location?: string;
   rating: number;
   text: string;
+  /** Month-level: Google only exposes relative timestamps ("2 months ago"). */
   date: string;
+  /** Platform the review was left on, shown when no location is available. */
+  source?: 'Google';
 }
 
 export interface BlogPost {
