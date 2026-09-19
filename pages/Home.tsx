@@ -6,7 +6,9 @@ import OptimizedImage from '../components/OptimizedImage';
 import SEO, { SITE_URL } from '../components/SEO';
 import {
   TOURS, REVIEWS, GUIDE_PACKAGES, DESTINATIONS, FAQS, PRICE_DISCLAIMER,
-  GOOGLE_RATING, GOOGLE_REVIEW_COUNT, GOOGLE_LISTING_URL
+  GOOGLE_RATING, GOOGLE_REVIEW_COUNT, GOOGLE_LISTING_URL,
+  TRIPADVISOR_RATING, TRIPADVISOR_REVIEW_COUNT, TRIPADVISOR_LISTING_URL,
+  PLATFORM_LISTINGS
 } from '../constants';
 import { GUIDES } from '../guides';
 import { Link } from 'react-router-dom';
@@ -100,16 +102,36 @@ const schema = [
                 <p className="text-brand-gold font-bold text-[10px] uppercase tracking-[0.2em] mt-1">Tours Booked Last Year</p>
               </div>
             </div>
-            <div className="relative flex-grow w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-              <div className="marquee-track items-center gap-14 opacity-40">
-                {[...Array(2)].flatMap((_, copy) =>
-                  ['Viator', 'Tripadvisor', 'Klook', 'GetYourGuide', 'Expedia', 'Lonely Planet'].map(brand => (
-                    <span key={`${copy}-${brand}`} className="text-white text-lg md:text-xl font-bold tracking-tight whitespace-nowrap pr-14">
-                      {brand}
+            {/* Ratings from the two platforms we are actually listed on, each
+                linking to the live listing so the numbers can be checked. */}
+            <div className="flex-grow w-full flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
+              {[
+                { name: 'Google', rating: GOOGLE_RATING, count: GOOGLE_REVIEW_COUNT, url: GOOGLE_LISTING_URL },
+                { name: 'Tripadvisor', rating: TRIPADVISOR_RATING, count: TRIPADVISOR_REVIEW_COUNT, url: TRIPADVISOR_LISTING_URL }
+              ].map(p => (
+                <a
+                  key={p.name}
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-white/80 hover:text-brand-gold transition-colors"
+                >
+                  <Star size={18} fill="currentColor" className="text-brand-gold" aria-hidden="true" />
+                  <span>
+                    <span className="font-bold text-white text-lg">{p.rating}</span>
+                    <span className="text-white/50 text-sm"> / 5</span>
+                    <span className="block text-[10px] uppercase tracking-[0.2em] font-bold">
+                      {p.name} · {p.count} reviews
                     </span>
-                  ))
-                )}
-              </div>
+                  </span>
+                </a>
+              ))}
+              {PLATFORM_LISTINGS.some(p => !p.url) && (
+                <p className="text-white/40 text-[10px] uppercase tracking-[0.2em] font-bold">
+                  Also listed on{' '}
+                  {PLATFORM_LISTINGS.filter(p => !p.url).map(p => p.name).join(', ')}
+                </p>
+              )}
             </div>
           </div>
         </div>

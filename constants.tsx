@@ -546,6 +546,26 @@ export const GOOGLE_REVIEW_COUNT = 8;
 export const GOOGLE_LISTING_URL = 'https://g.page/r/CS9HSF8iHKJeEBM';
 
 /**
+ * Tripadvisor listing — same rule as above: only figures the public page shows.
+ * Verified September 2026.
+ */
+export const TRIPADVISOR_RATING = '5.0';
+export const TRIPADVISOR_REVIEW_COUNT = 5;
+export const TRIPADVISOR_LISTING_URL =
+  'https://www.tripadvisor.com/Attraction_Review-g304551-d34462482-Reviews-Indiventure_Travellers-New_Delhi_National_Capital_Territory_of_Delhi.html';
+
+/**
+ * Booking platforms we are actually listed on, shown in the homepage trust band.
+ * Add a platform here only once a live listing exists — an unlinked logo implies
+ * a partnership that a traveller cannot verify.
+ * TODO: add the Viator listing URL so the entry can link out like Tripadvisor.
+ */
+export const PLATFORM_LISTINGS: { name: string; url?: string }[] = [
+  { name: 'Tripadvisor', url: TRIPADVISOR_LISTING_URL },
+  { name: 'Viator' }
+];
+
+/**
  * Verified Google reviews, transcribed verbatim from the public listing
  * (spelling left as written by the reviewer). Last synced September 2026.
  *
